@@ -19,6 +19,8 @@ Antolín-Camarena, Omar, and Jeremy Wall. “How to Use Arbitrary Length Sequenc
 
 “Constants.” _Http Package - Net/Http - Go Packages_, pkg.go.dev/net/http#pkg-constants. Accessed 28 Oct. 2025.
 
+Han, and Arin Yazilim. “Go Error: Go : Go.Mod File Not Found in Current Directory or Any Parent Directory; (Working on GOPATH/Src).” _Stack Overflow_, 1 Sept. 1965, stackoverflow.com/questions/67929883/go-error-go-go-mod-file-not-found-in-current-directory-or-any-parent-director/68508392#68508392. Accessed 28 Oct. 2025.
+
 Kfir, and mbuechmann. “Use different structs as a value in map golang.” _Stack Overflow_, 8 Nov. 2018, stackoverflow.com/questions/53204138/use-different-structs-as-a-value-in-map-golang. Accessed 27 Oct. 2025.
 
 “MLA Works Cited: Electronic Sources (Web Publications).” _MLA Works Cited: Electronic Sources - Purdue OWL® - Purdue University_, owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_works_cited_electronic_sources.html. Accessed 26 Oct 2025.
