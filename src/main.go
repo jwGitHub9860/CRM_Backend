@@ -26,13 +26,13 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func getCustomer(name string) {}
+func getCustomer(w http.ResponseWriter, r *http.Request) {}
 
-func addCustomer(customerMap map[uint32]string) {}
+func addCustomer(w http.ResponseWriter, r *http.Request) {}
 
-func updateCustomer(name string) {}
+func updateCustomer(w http.ResponseWriter, r *http.Request) {}
 
-func removeCustomer(name string) {}
+func removeCustomer(w http.ResponseWriter, r *http.Request) {}
 
 func main() {
 	fmt.Println("Server is starting...")
