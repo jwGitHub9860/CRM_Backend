@@ -20,9 +20,9 @@ var customerMap = map[uint32]Customer{
 	2: Customer{"Jane Doe", "Payer", "janedoe@gmail.com", "987-654-3210", false},
 }
 
-func getAllCustomers(customerMap map[uint32]string) {
-	for id, customer := range customerMap {
-		fmt.Println()
+func getAllCustomers(w http.ResponseWriter, r *http.Request) {
+	for _, customer := range customerMap {
+		fmt.Println(customer)
 	}
 }
 
