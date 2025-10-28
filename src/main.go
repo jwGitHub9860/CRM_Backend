@@ -48,11 +48,20 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func addCustomer(w http.ResponseWriter, r *http.Request) {}
+func addCustomer(w http.ResponseWriter, r *http.Request) {
+	// Checks if Customer Exists
+	http.HandleFunc("/customers/{id}", getCustomer)
+}
 
-func updateCustomer(w http.ResponseWriter, r *http.Request) {}
+func updateCustomer(w http.ResponseWriter, r *http.Request) {
+	// Checks if Customer Exists
+	http.HandleFunc("/customers/{id}", getCustomer)
+}
 
-func removeCustomer(w http.ResponseWriter, r *http.Request) {}
+func removeCustomer(w http.ResponseWriter, r *http.Request) {
+	// Checks if Customer Exists
+	http.HandleFunc("/customers/{id}", getCustomer)
+}
 
 func main() {
 	// Calls Functions as Handler Functions
