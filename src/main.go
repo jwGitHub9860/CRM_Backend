@@ -26,7 +26,25 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func getCustomer(w http.ResponseWriter, r *http.Request) {}
+// CHECK ON: keep "name string" or not
+func getCustomer(name string, w http.ResponseWriter, r *http.Request) {
+	findCustomer := false
+
+	// Checks if "name" Exists
+	for _, customer := range customerMap {
+		customerName := customer.name
+		if customerName == name {
+			findCustomer = true
+		}
+	}
+
+	// Displays if Customer was Found or Not
+	if findCustomer {
+		w.WriteHeader(http.StatusAccepted)
+	} else {
+		w.WriteHeader(http.StatusConflict)
+	}
+}
 
 func addCustomer(w http.ResponseWriter, r *http.Request) {}
 
