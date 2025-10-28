@@ -15,6 +15,11 @@ type Customer struct {
 	contacted bool
 }
 
+var customerMap = map[uint32]Customer{
+	1: Customer{"John Doe", "Buyer", "johndoe@gmail.com", "123-456-7890", true},
+	2: Customer{"Jane Doe", "Payer", "janedoe@gmail.com", "987-654-3210", false},
+}
+
 func getAllCustomers(customerMap map[uint32]string) {
 	for id, customer := range customerMap {
 		fmt.Println()
@@ -30,11 +35,6 @@ func updateCustomer(name string) {}
 func removeCustomer(name string) {}
 
 func main() {
-	customerMap := map[uint32]Customer{
-		1: Customer{"John Doe", "Buyer", "johndoe@gmail.com", "123-456-7890", true},
-		2: Customer{"Jane Doe", "Payer", "janedoe@gmail.com", "987-654-3210", false},
-	}
-
 	fmt.Println("Server is starting...")
 	http.ListenAndServe(":3000", nil)
 }
