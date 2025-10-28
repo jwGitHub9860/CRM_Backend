@@ -30,12 +30,9 @@ func updateCustomer(name string) {}
 func removeCustomer(name string) {}
 
 func main() {
-	c1 := Customer{"John Doe", "Buyer", "johndoe@gmail.com", "123-456-7890", true}
-	c2 := Customer{"Jane Doe", "Payer", "janedoe@gmail.com", "987-654-3210", false}
-
 	customerMap := map[uint32]Customer{
-		1: c1,
-		2: c2,
+		1: Customer{"John Doe", "Buyer", "johndoe@gmail.com", "123-456-7890", true},
+		2: Customer{"Jane Doe", "Payer", "janedoe@gmail.com", "987-654-3210", false},
 	}
 
 	fmt.Println("Server is starting...")
