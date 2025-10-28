@@ -5,6 +5,8 @@ import (
 	"fmt"
 	//"io/ioutil"
 	"net/http"
+
+	"github.com/gorilla/mux"
 )
 
 type Customer struct {
@@ -27,7 +29,7 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 }
 
 // CHECK ON: keep "name string" or not
-func getCustomer(name string, w http.ResponseWriter, r *http.Request) {
+func getCustomer(w http.ResponseWriter, r *http.Request) {
 	findCustomer := false
 
 	// Checks if "name" Exists
@@ -53,6 +55,15 @@ func updateCustomer(w http.ResponseWriter, r *http.Request) {}
 func removeCustomer(w http.ResponseWriter, r *http.Request) {}
 
 func main() {
+	// Calls Functions as Handler Functions
+	router := mux.NewRouter().StrictSlash(true)
+
+	router.HandleFunc("/customers/{id}", getCustomer).Methods("GET")
+	router.HandleFunc("/customers", getAllCustomers).Methods("GET")
+	router.HandleFunc("/customers", addCustomer).Methods("POST")
+	router.HandleFunc("/customers/{id}", updateCustomer).Methods("PUT")
+	router.HandleFunc("/customers/{id}", removeCustomer).Methods("DELETE")
+
 	fmt.Println("Server is starting...")
 	http.ListenAndServe(":3000", nil)
 }
