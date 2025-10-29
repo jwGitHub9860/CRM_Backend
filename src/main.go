@@ -31,11 +31,16 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 // CHECK ON: keep "name string" or not
 func getCustomer(w http.ResponseWriter, r *http.Request) {
 	findCustomer := false
+	var userInput string
+
+	// Takes User Input
+	fmt.Println("Enter Customer Name: ")
+	fmt.Scanln(&userInput)
 
 	// Checks if "name" Exists
 	for _, customer := range customerMap {
 		customerName := customer.name
-		if customerName == name {
+		if customerName == userInput {
 			findCustomer = true
 		}
 	}
