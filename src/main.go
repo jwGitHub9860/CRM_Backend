@@ -30,7 +30,7 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 
 // CHECK ON: keep "name string" or not
 func getCustomer(w http.ResponseWriter, r *http.Request) {
-	findCustomer := false
+	customerNotFound := true
 	var userInput string
 
 	// Takes User Input
@@ -40,14 +40,14 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 	// Checks if "userInput" Exists
 	for _, customer := range customerMap {
 		if customer.name == userInput {
-			findCustomer = true
+			customerNotFound = false
+			w.WriteHeader(http.StatusAccepted)
+			fmt.Print(customer)
 		}
 	}
 
-	// Displays if Customer was Found or Not
-	if findCustomer {
-		w.WriteHeader(http.StatusAccepted)
-	} else {
+	// Displays if Customer was NOT FOUND
+	if customerNotFound {
 		w.WriteHeader(http.StatusConflict)
 	}
 }
