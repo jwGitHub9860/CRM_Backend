@@ -28,7 +28,7 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-// CHECK ON: keep "name string" or not
+/*
 func getCustomer(w http.ResponseWriter, r *http.Request) {
 	customerNotFound := true
 	var userInput string
@@ -66,7 +66,7 @@ func updateCustomer(w http.ResponseWriter, r *http.Request) {
 func removeCustomer(w http.ResponseWriter, r *http.Request) {
 	// Checks if Customer Exists
 	http.HandleFunc("/customers/{id}", getCustomer)
-}
+}*/
 
 func main() {
 	// Accesses "index.html" as Default File
@@ -76,11 +76,11 @@ func main() {
 	// Calls Functions as Handler Functions
 	router := mux.NewRouter().StrictSlash(true)
 
-	router.HandleFunc("/customers/{id}", getCustomer).Methods("GET")
+	//router.HandleFunc("/customers/{id}", getCustomer).Methods("GET")
 	router.HandleFunc("/customers", getAllCustomers).Methods("GET")
-	router.HandleFunc("/customers", addCustomer).Methods("POST")
+	/*router.HandleFunc("/customers", addCustomer).Methods("POST")
 	router.HandleFunc("/customers/{id}", updateCustomer).Methods("PUT")
-	router.HandleFunc("/customers/{id}", removeCustomer).Methods("DELETE")
+	router.HandleFunc("/customers/{id}", removeCustomer).Methods("DELETE")*/
 
 	fmt.Println("Server is starting...")
 	http.ListenAndServe(":3000", nil)
