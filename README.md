@@ -17,6 +17,8 @@ _None_
 
 Antolín-Camarena, Omar, and Jeremy Wall. “How to Use Arbitrary Length Sequences of Values as Map Keys in Go?” _Stack Overflow_, 12 Apr. 2012, stackoverflow.com/questions/10116476/how-to-use-arbitrary-length-sequences-of-values-as-map-keys-in-go. Accessed 27 Oct. 2025.
 
+asker152, et al. “Error Message ‘Go: Go.Mod File Not Found in Current Directory or Any Parent Directory; See “Go Help Modules.”’” Edited by DailyLearner and Peter Mortensen, _Stack Overflow_, 31 Mar. 2021, stackoverflow.com/questions/66894200/error-message-go-go-mod-file-not-found-in-current-directory-or-any-parent-dire. Accessed 28 Oct. 2025.
+
 “Constants.” _Http Package - Net/Http - Go Packages_, pkg.go.dev/net/http#pkg-constants. Accessed 28 Oct. 2025.
 
 “Go by Example: For.” _Go by Example: For_, gobyexample.com/for. Accessed 28 Oct. 2025.
