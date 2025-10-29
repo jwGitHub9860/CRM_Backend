@@ -43,6 +43,7 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 			customerNotFound = false
 			w.WriteHeader(http.StatusAccepted)
 			fmt.Print(customer)
+			break
 		}
 	}
 
