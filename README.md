@@ -25,6 +25,8 @@ Kfir, and mbuechmann. “Use different structs as a value in map golang.” _Sta
 
 “MLA Works Cited: Electronic Sources (Web Publications).” _MLA Works Cited: Electronic Sources - Purdue OWL® - Purdue University_, owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_works_cited_electronic_sources.html. Accessed 26 Oct 2025.
 
+“Online Compiler and Debugger for C/C++.” _GDB Online Debugger_, www.onlinegdb.com/. Accessed 28 Oct. 2025.
+
 r/golang, and phlatphrog. “How to Pass a Generic Map Parameter to Function.” _Reddit_, 2017, www.reddit.com/r/golang/comments/7p879p/how_to_pass_a_generic_map_parameter_to_function/. Accessed 27 Oct. 2025.
 
 Sanjeev. “Custom Golang HTTP Router.” _Medium_, Medium, 13 June 2021, sanjeevsiva.medium.com/custom-golang-http-router-970a309531d7. Accessed 28 Oct. 2025.
