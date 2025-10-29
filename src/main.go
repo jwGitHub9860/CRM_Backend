@@ -37,10 +37,9 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Enter Customer Name: ")
 	fmt.Scanln(&userInput)
 
-	// Checks if "name" Exists
+	// Checks if "userInput" Exists
 	for _, customer := range customerMap {
-		customerName := customer.name
-		if customerName == userInput {
+		if customer.name == userInput {
 			findCustomer = true
 		}
 	}
