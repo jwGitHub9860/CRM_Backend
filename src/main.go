@@ -18,8 +18,8 @@ type Customer struct {
 }
 
 var customerMap = map[uint32]Customer{
-	1: Customer{"John Doe", "Buyer", "johndoe@gmail.com", "123-456-7890", true},
-	2: Customer{"Jane Doe", "Payer", "janedoe@gmail.com", "987-654-3210", false},
+	1: {"John Doe", "Buyer", "johndoe@gmail.com", "123-456-7890", true},
+	2: {"Jane Doe", "Payer", "janedoe@gmail.com", "987-654-3210", false},
 }
 
 func getAllCustomers(w http.ResponseWriter, r *http.Request) {
