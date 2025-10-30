@@ -67,12 +67,12 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 func updateCustomer(w http.ResponseWriter, r *http.Request) {
 	// Checks if Customer Exists
 	http.HandleFunc("/customers/{id}", getCustomer)
-}
+}*/
 
 func removeCustomer(w http.ResponseWriter, r *http.Request) {
 	// Checks if Customer Exists
 	http.HandleFunc("/customers/{id}", getCustomer)
-}*/
+}
 
 func main() {
 	// Accesses "index.html" as Default File
@@ -85,8 +85,8 @@ func main() {
 	router.HandleFunc("/customers/{id}", getCustomer).Methods("GET")
 	router.HandleFunc("/customers", getAllCustomers).Methods("GET")
 	/*router.HandleFunc("/customers", addCustomer).Methods("POST")
-	router.HandleFunc("/customers/{id}", updateCustomer).Methods("PUT")
-	router.HandleFunc("/customers/{id}", removeCustomer).Methods("DELETE")*/
+	router.HandleFunc("/customers/{id}", updateCustomer).Methods("PUT")*/
+	router.HandleFunc("/customers/{id}", removeCustomer).Methods("DELETE")
 
 	fmt.Println("Server is starting...")
 	http.ListenAndServe(":3000", router)
