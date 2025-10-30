@@ -28,7 +28,6 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-/*
 func getCustomer(w http.ResponseWriter, r *http.Request) {
 	customerNotFound := true
 	var userInput string
@@ -53,7 +52,7 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func addCustomer(w http.ResponseWriter, r *http.Request) {
+/*func addCustomer(w http.ResponseWriter, r *http.Request) {
 	// Checks if Customer Exists
 	http.HandleFunc("/customers/{id}", getCustomer)
 }
@@ -76,7 +75,7 @@ func main() {
 	// Calls Functions as Handler Functions
 	router := mux.NewRouter().StrictSlash(true)
 
-	//router.HandleFunc("/customers/{id}", getCustomer).Methods("GET")
+	router.HandleFunc("/customers/{id}", getCustomer).Methods("GET")
 	router.HandleFunc("/customers", getAllCustomers).Methods("GET")
 	/*router.HandleFunc("/customers", addCustomer).Methods("POST")
 	router.HandleFunc("/customers/{id}", updateCustomer).Methods("PUT")
