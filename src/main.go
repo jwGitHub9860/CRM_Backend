@@ -44,9 +44,6 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 
 	// Checks if "userInput" Exists
 	for _, customer := range customerMap {
-		fmt.Println("Customer Name: ", customer.name)
-		fmt.Println("User Input: ", userInput)
-
 		// MUST USE "strings.Compare(userInput, customer.name) == 0", Using "userInput == customer.name" Defines "userInput" & "customer.name" as NOT EQUAL EVEN THOUGH THEY ARE EQUAL
 		if strings.Compare(userInput, customer.name) == 0 {
 			customerNotFound = false
