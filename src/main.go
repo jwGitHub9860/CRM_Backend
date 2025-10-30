@@ -70,8 +70,8 @@ func removeCustomer(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	// Accesses "index.html" as Default File
-	fileServer := http.FileServer(http.Dir("./static"))
-	http.Handle("/", fileServer)
+	//fileServer := http.FileServer(http.Dir("./static"))
+	//http.Handle("/", fileServer)
 
 	// Calls Functions as Handler Functions
 	router := mux.NewRouter().StrictSlash(true)
@@ -83,5 +83,5 @@ func main() {
 	router.HandleFunc("/customers/{id}", removeCustomer).Methods("DELETE")*/
 
 	fmt.Println("Server is starting...")
-	http.ListenAndServe(":3000", nil)
+	http.ListenAndServe(":3000", router)
 }
