@@ -21,6 +21,8 @@ asker152, et al. “Error Message ‘Go: Go.Mod File Not Found in Current Direct
 
 “Constants.” _Http Package - Net/Http - Go Packages_, pkg.go.dev/net/http#pkg-constants. Accessed 28 Oct. 2025.
 
+“Different Ways to Find the Type of Variable in Golang.” _GeeksforGeeks_, GeeksforGeeks, 12 July 2025, www.geeksforgeeks.org/go-language/different-ways-to-find-the-type-of-variable-in-golang/. Accessed 29 Oct. 2025.
+
 “Go by Example: For.” _Go by Example: For_, gobyexample.com/for. Accessed 28 Oct. 2025.
 
 Han, and Arin Yazilim. “Go Error: Go : Go.Mod File Not Found in Current Directory or Any Parent Directory; (Working on GOPATH/Src).” _Stack Overflow_, 1 Sept. 1965, stackoverflow.com/questions/67929883/go-error-go-go-mod-file-not-found-in-current-directory-or-any-parent-director/68508392#68508392. Accessed 28 Oct. 2025.
@@ -40,3 +42,5 @@ r/golang, and phlatphrog. “How to Pass a Generic Map Parameter to Function.”
 Sanjeev. “Custom Golang HTTP Router.” _Medium_, Medium, 13 June 2021, sanjeevsiva.medium.com/custom-golang-http-router-970a309531d7. Accessed 28 Oct. 2025.
 
 Wada, Kengo. “Go Routing 101: Handling and Grouping Routes with Net/Http.” _DEV Community_, 2 Nov. 2024, dev.to/kengowada/go-routing-101-handling-and-grouping-routes-with-nethttp-4k0e. Accessed 28 Oct. 2025.
+
+Warmth, Vinyl, and BadZen. “Why Is My Go Lang String Comparison Not Working as Expected?” _Stack Overflow_, 5 Nov. 2016, stackoverflow.com/questions/40442971/why-is-my-go-lang-string-comparison-not-working-as-expected. Accessed 29 Oct. 2025.
