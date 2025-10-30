@@ -36,18 +36,35 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Enter Customer Name: ")
 	fmt.Scanln(&userInput)
 
+	// TEST PRINT STATEMENT
+	fmt.Println("User Input: ", userInput)
+
 	// Checks if "userInput" Exists
 	for _, customer := range customerMap {
+		// TEST PRINT STATEMENTS
+		fmt.Println("Customer: ", customer)
+		fmt.Println("Customer Name: ", customer.name)
+
 		if customer.name == userInput {
+			// TEST PRINT STATEMENT
+			fmt.Println("INSIDE if statement")
+
 			customerNotFound = false
 			w.WriteHeader(http.StatusAccepted)
 			fmt.Print(customer)
 			break
 		}
+		// TEST PRINT STATEMENT
+		fmt.Println("EXITED if statement")
 	}
+	// TEST PRINT STATEMENT
+	fmt.Println("EXITED for loop")
 
 	// Displays if Customer was NOT FOUND
 	if customerNotFound {
+		// TEST PRINT STATEMENT
+		fmt.Println("INSIDE Customer Not Found if statement")
+
 		w.WriteHeader(http.StatusConflict)
 	}
 }
