@@ -29,6 +29,8 @@ Han, and Arin Yazilim. “Go Error: Go : Go.Mod File Not Found in Current Dire
 
 “How to Take Input from the User in Golang?” _GeeksforGeeks_, GeeksforGeeks, 10 May 2020, www.geeksforgeeks.org/go-language/how-to-take-input-from-the-user-in-golang/. Accessed 28 Oct. 2025.
 
+Ihab, Naguib, et al. “Return Nil for a Struct in Go.” Edited by Jonathan Hall, _Stack Overflow_, 5 June 2018, stackoverflow.com/questions/50697914/return-nil-for-a-struct-in-go. Accessed 30 Oct. 2025.
+
 Kelche, Kevin. “How to Accept User Input with Spaces in Golang.” _Kelche_, 29 July 2023, www.kelche.co/blog/go/user-input-with-spaces/. Accessed 29 Oct. 2025.
 
 Kfir, and mbuechmann. “Use different structs as a value in map golang.” _Stack Overflow_, 8 Nov. 2018, stackoverflow.com/questions/53204138/use-different-structs-as-a-value-in-map-golang. Accessed 27 Oct. 2025.
@@ -37,7 +39,11 @@ Kfir, and mbuechmann. “Use different structs as a value in map golang.” _Sta
 
 “Online Compiler and Debugger for C/C++.” _GDB Online Debugger_, www.onlinegdb.com/. Accessed 28 Oct. 2025.
 
+r/golang, and edgmnt_net. “CRUD, Return Empty Struct or Nil?” _Reddit_, 2022, www.reddit.com/r/golang/comments/vd1upf/crud_return_empty_struct_or_nil/. Accessed 30 Oct. 2025.
+
 r/golang, and phlatphrog. “How to Pass a Generic Map Parameter to Function.” _Reddit_, 2017, www.reddit.com/r/golang/comments/7p879p/how_to_pass_a_generic_map_parameter_to_function/. Accessed 27 Oct. 2025.
+
+Rees, Lucas. “Working with Null Values in Go: A Complete Guide.” _Go/Golang Programming and Scripting_, 2 Feb. 2021, golang.howtos.io/working-with-null-values-in-go-a-complete-guide/. Accessed 30 Oct. 2025.
 
 Sanjeev. “Custom Golang HTTP Router.” _Medium_, Medium, 13 June 2021, sanjeevsiva.medium.com/custom-golang-http-router-970a309531d7. Accessed 28 Oct. 2025.
 
