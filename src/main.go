@@ -33,15 +33,14 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 
 func getCustomer(w http.ResponseWriter, r *http.Request) {
 	customerNotFound := true
-	var userInput string
 
 	// Takes User Input
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Println("Enter Customer Name: ")
+	userInput, _ := reader.ReadString('\n')
 
 	// TEST PRINT STATEMENT
-	title, _ := reader.ReadString('\n')
-	fmt.Println("User Input: ", title)
+	fmt.Println("User Input: ", userInput)
 
 	// Checks if "userInput" Exists
 	for _, customer := range customerMap {
