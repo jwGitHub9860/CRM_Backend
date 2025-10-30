@@ -27,6 +27,8 @@ Han, and Arin Yazilim. “Go Error: Go : Go.Mod File Not Found in Current Dire
 
 “How to Take Input from the User in Golang?” _GeeksforGeeks_, GeeksforGeeks, 10 May 2020, www.geeksforgeeks.org/go-language/how-to-take-input-from-the-user-in-golang/. Accessed 28 Oct. 2025.
 
+Kelche, Kevin. “How to Accept User Input with Spaces in Golang.” _Kelche_, 29 July 2023, www.kelche.co/blog/go/user-input-with-spaces/. Accessed 29 Oct. 2025.
+
 Kfir, and mbuechmann. “Use different structs as a value in map golang.” _Stack Overflow_, 8 Nov. 2018, stackoverflow.com/questions/53204138/use-different-structs-as-a-value-in-map-golang. Accessed 27 Oct. 2025.
 
 “MLA Works Cited: Electronic Sources (Web Publications).” _MLA Works Cited: Electronic Sources - Purdue OWL® - Purdue University_, owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_works_cited_electronic_sources.html. Accessed 26 Oct 2025.
