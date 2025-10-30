@@ -2,6 +2,8 @@ package main
 
 import (
 	"bufio"
+	"strings"
+
 	//"encoding/json"
 	"fmt"
 	//"go/reader"
@@ -33,33 +35,43 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 
 func getCustomer(w http.ResponseWriter, r *http.Request) {
 	customerNotFound := true
+	//var userInputInStringForm string
 
 	// Takes User Input
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Println("Enter Customer Name: ")
 	userInput, _ := reader.ReadString('\n')
+	userInput = strings.Trim(userInput, "\r\n")
 
 	// TEST PRINT STATEMENT
-	fmt.Println("User Input: ", userInput)
+	/*fmt.Println("User Input: ", userInput)
+	fmt.Printf("User Input TYPE: %T\n", userInput)*/
 
 	// Checks if "userInput" Exists
 	for _, customer := range customerMap {
 		// TEST PRINT STATEMENTS
-		fmt.Println("Customer: ", customer)
-		fmt.Println("PRESENTLY User Input: ", userInput)
+		//fmt.Println("Customer: ", customer)
 		fmt.Println("Customer Name: ", customer.name)
+		fmt.Println("User Input: ", userInput)
+		/*fmt.Println("User Input IN STRING FORM: ", userInputInStringForm)
+		fmt.Printf("Customer Name TYPE: %T\n", customer.name)
+		fmt.Printf("PRESENTLY User Input TYPE: %T\n", userInput)
+		fmt.Printf("User Input IN STRING FORM TYPE: %T\n", userInputInStringForm)*/
 
-		if userInput == customer.name {
+		// MUST USE "strings.Compare(userInput, customer.name) == 0", Using "userInput == customer.name" Defines "userInput" & "customer.name" as NOT EQUAL EVEN THOUGH THEY ARE EQUAL
+		if strings.Compare(userInput, customer.name) == 0 {
 			// TEST PRINT STATEMENT
 			fmt.Println("INSIDE if statement")
 
 			customerNotFound = false
 			w.WriteHeader(http.StatusAccepted)
 			fmt.Print(customer)
+
+			// TEST PRINT STATEMENT
+			fmt.Println("EXITING if statement")
+
 			break
 		}
-		// TEST PRINT STATEMENT
-		fmt.Println("EXITED if statement")
 	}
 	// TEST PRINT STATEMENT
 	fmt.Println("EXITED for loop")
