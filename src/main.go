@@ -1,10 +1,13 @@
 package main
 
 import (
+	"bufio"
 	//"encoding/json"
 	"fmt"
+	//"go/scanner"
 	//"io/ioutil"
 	"net/http"
+	"os"
 
 	"github.com/gorilla/mux"
 )
@@ -34,10 +37,13 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 
 	// Takes User Input
 	fmt.Println("Enter Customer Name: ")
-	fmt.Scanln(&userInput)
+	scanner := bufio.NewScanner(os.Stdin)
+	fmt.Println("> ")
 
 	// TEST PRINT STATEMENT
-	fmt.Println("User Input: ", userInput)
+	if scanner.Scan() {
+		fmt.Printf("User Input: \"%s\"\n", scanner.Text())
+	}
 
 	// Checks if "userInput" Exists
 	for _, customer := range customerMap {
