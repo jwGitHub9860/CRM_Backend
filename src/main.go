@@ -4,7 +4,7 @@ import (
 	"bufio"
 	//"encoding/json"
 	"fmt"
-	//"go/scanner"
+	//"go/reader"
 	//"io/ioutil"
 	"net/http"
 	"os"
@@ -36,14 +36,12 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 	var userInput string
 
 	// Takes User Input
+	reader := bufio.NewReader(os.Stdin)
 	fmt.Println("Enter Customer Name: ")
-	scanner := bufio.NewScanner(os.Stdin)
-	fmt.Println("> ")
 
 	// TEST PRINT STATEMENT
-	if scanner.Scan() {
-		fmt.Printf("User Input: \"%s\"\n", scanner.Text())
-	}
+	title, _ := reader.ReadString('\n')
+	fmt.Println("User Input: ", title)
 
 	// Checks if "userInput" Exists
 	for _, customer := range customerMap {
