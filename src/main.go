@@ -46,6 +46,7 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 	for _, customer := range customerMap {
 		// TEST PRINT STATEMENTS
 		fmt.Println("Customer: ", customer)
+		fmt.Println("PRESENTLY User Input: ", userInput)
 		fmt.Println("Customer Name: ", customer.name)
 
 		if customer.name == userInput {
