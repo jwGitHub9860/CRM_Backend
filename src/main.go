@@ -49,7 +49,7 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("PRESENTLY User Input: ", userInput)
 		fmt.Println("Customer Name: ", customer.name)
 
-		if customer.name == userInput {
+		if userInput == customer.name {
 			// TEST PRINT STATEMENT
 			fmt.Println("INSIDE if statement")
 
