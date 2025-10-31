@@ -101,7 +101,7 @@ func removeCustomer(w http.ResponseWriter, r *http.Request) {
 	customerExistence := doesCustomerExist(true)
 	if customerExistence != (Customer{}) {
 		w.WriteHeader(http.StatusAccepted)
-		fmt.Print(customerExistence)
+		delete(customerMap, customerExistence)
 	} else {
 		w.WriteHeader(http.StatusConflict)
 	}
