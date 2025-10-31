@@ -27,6 +27,8 @@ asker152, et al. “Error Message ‘Go: Go.Mod File Not Found in Current Direct
 
 Han, and Arin Yazilim. “Go Error: Go : Go.Mod File Not Found in Current Directory or Any Parent Directory; (Working on GOPATH/Src).” _Stack Overflow_, 1 Sept. 1965, stackoverflow.com/questions/67929883/go-error-go-go-mod-file-not-found-in-current-directory-or-any-parent-director/68508392#68508392. Accessed 28 Oct. 2025.
 
+hhh, et al. “Simple Way of Getting Key Depending on Value from Hashmap in Golang.” Edited by User142162, _Stack Overflow_, 14 Nov. 2015, stackoverflow.com/questions/33701828/simple-way-of-getting-key-depending-on-value-from-hashmap-in-golang. Accessed 30 Oct. 2025.
+
 “How to Take Input from the User in Golang?” _GeeksforGeeks_, GeeksforGeeks, 10 May 2020, www.geeksforgeeks.org/go-language/how-to-take-input-from-the-user-in-golang/. Accessed 28 Oct. 2025.
 
 Ihab, Naguib, et al. “Return Nil for a Struct in Go.” Edited by Jonathan Hall, _Stack Overflow_, 5 June 2018, stackoverflow.com/questions/50697914/return-nil-for-a-struct-in-go. Accessed 30 Oct. 2025.
