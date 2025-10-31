@@ -27,15 +27,7 @@ var customerMap = map[uint32]Customer{
 	2: {"Jane Doe", "Payer", "janedoe@gmail.com", "987-654-3210", false},
 }
 
-func getAllCustomers(w http.ResponseWriter, r *http.Request) {
-	for _, customer := range customerMap {
-		fmt.Println(customer)
-	}
-}
-
-func getCustomer(w http.ResponseWriter, r *http.Request) {
-	customerNotFound := true
-
+func doesCustomerExist(customerNotFound bool) Customer {
 	// Takes User Input
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Println("Enter Customer Name: ")
@@ -47,14 +39,33 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 		// MUST USE "strings.Compare(userInput, customer.name) == 0", Using "userInput == customer.name" Defines "userInput" & "customer.name" as NOT EQUAL EVEN THOUGH THEY ARE EQUAL
 		if strings.Compare(userInput, customer.name) == 0 {
 			customerNotFound = false
-			w.WriteHeader(http.StatusAccepted)
-			fmt.Print(customer)
-			break
+			return customer
 		}
 	}
 
 	// Displays if Customer was NOT FOUND
 	if customerNotFound {
+		// Returns NULL VALUE for "struct"
+		return Customer{}
+	}
+
+	// Fixes "missing return statement" Error
+	return Customer{}
+}
+
+func getAllCustomers(w http.ResponseWriter, r *http.Request) {
+	for _, customer := range customerMap {
+		fmt.Println(customer)
+	}
+}
+
+func getCustomer(w http.ResponseWriter, r *http.Request) {
+	// Checks if Customer Exists
+	customerExistence := doesCustomerExist(true)
+	if customerExistence != (Customer{}) {
+		w.WriteHeader(http.StatusAccepted)
+		fmt.Print(customerExistence)
+	} else {
 		w.WriteHeader(http.StatusConflict)
 	}
 }
