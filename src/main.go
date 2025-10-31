@@ -72,17 +72,39 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 
 /*func addCustomer(w http.ResponseWriter, r *http.Request) {
 	// Checks if Customer Exists
-	http.HandleFunc("/customers/{id}", getCustomer)
+	customerExistence := doesCustomerExist(true)
+	if customerExistence != (Customer{}) {
+		w.WriteHeader(http.StatusAccepted)
+
+		// FIX THIS
+		add(customerExistence)
+	} else {
+		w.WriteHeader(http.StatusConflict)
+	}
 }
 
 func updateCustomer(w http.ResponseWriter, r *http.Request) {
 	// Checks if Customer Exists
-	http.HandleFunc("/customers/{id}", getCustomer)
+	customerExistence := doesCustomerExist(true)
+	if customerExistence != (Customer{}) {
+		w.WriteHeader(http.StatusAccepted)
+
+		// FIX THIS
+		fmt.Print(customerExistence)
+	} else {
+		w.WriteHeader(http.StatusConflict)
+	}
 }*/
 
 func removeCustomer(w http.ResponseWriter, r *http.Request) {
 	// Checks if Customer Exists
-	http.HandleFunc("/customers/{id}", getCustomer)
+	customerExistence := doesCustomerExist(true)
+	if customerExistence != (Customer{}) {
+		w.WriteHeader(http.StatusAccepted)
+		fmt.Print(customerExistence)
+	} else {
+		w.WriteHeader(http.StatusConflict)
+	}
 }
 
 func main() {
