@@ -51,6 +51,30 @@ func inputCustomerInfo(inputPrintStatementNumber int) string {
 	return strings.Trim(userInput, "\r\n")
 }
 
+func chooseCustomerInfo(choosingSuccessful bool) {
+	// Initializes Strings to EMPTY because Strings will CONSTANTLY CHANGE
+	customerInfoStrings := [5]string{}
+
+	for i := 0; i < 5; i++ {
+		customerInfoStrings[i] = inputCustomerInfo(i)
+		if customerInfoStrings[4] == "true" {
+			customerMap[key] = Customer{customerInfoStrings[0], customerInfoStrings[1],
+				customerInfoStrings[2], customerInfoStrings[3],
+				true,
+			}
+			choosingSuccessful = true
+		} else if customerInfoStrings[4] != "false" {
+			customerMap[key] = Customer{customerInfoStrings[0], customerInfoStrings[1],
+				customerInfoStrings[2], customerInfoStrings[3],
+				false,
+			}
+			choosingSuccessful = true
+		} else {
+			choosingSuccessful = false
+		}
+	}
+}
+
 func doesCustomerExist(customerNotFound bool, userInput string) Customer {
 	// Checks if "userInput" Exists
 	for mapKey, customer := range customerMap {
