@@ -41,7 +41,7 @@ var whatToInputStatements = []string{
 func inputCustomerInfo(inputPrintStatementNumber int) string {
 	// Takes User Input
 	reader := bufio.NewReader(os.Stdin)
-	fmt.Println(whatToInputStatements[inputPrintStatementNumber])
+	fmt.Println("\n", whatToInputStatements[inputPrintStatementNumber])
 	userInput, _ := reader.ReadString('\n')
 	return strings.Trim(userInput, "\r\n")
 }
@@ -81,7 +81,7 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 	customerExistence := doesCustomerExist(true, inputCustomerInfo(0))
 	if customerExistence != (Customer{}) {
 		w.WriteHeader(http.StatusAccepted)
-		fmt.Print(customerExistence)
+		fmt.Print("\n", customerExistence)
 	} else {
 		w.WriteHeader(http.StatusConflict)
 	}
