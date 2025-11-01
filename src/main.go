@@ -35,7 +35,7 @@ func inputCustomerInfo(inputPrintStatementNumber int) string {
 	return strings.Trim(userInput, "\r\n")
 }
 
-func doesCustomerExist(customerNotFound bool) Customer {
+func doesCustomerExist(customerNotFound bool, userInput string) Customer {
 	// Checks if "userInput" Exists
 	for _, customer := range customerMap {
 		// MUST USE "strings.Compare(userInput, customer.name) == 0", Using "userInput == customer.name" Defines "userInput" & "customer.name" as NOT EQUAL EVEN THOUGH THEY ARE EQUAL
@@ -63,7 +63,7 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 
 func getCustomer(w http.ResponseWriter, r *http.Request) {
 	// Checks if Customer Exists
-	customerExistence := doesCustomerExist(true)
+	customerExistence := doesCustomerExist(true, inputCustomerInfo(0))
 	if customerExistence != (Customer{}) {
 		w.WriteHeader(http.StatusAccepted)
 		fmt.Print(customerExistence)
@@ -87,7 +87,7 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 
 func updateCustomer(w http.ResponseWriter, r *http.Request) {
 	// Checks if Customer Exists
-	customerExistence := doesCustomerExist(true)
+	customerExistence := doesCustomerExist(true, chosenCustomerName)
 	if customerExistence != (Customer{}) {
 		w.WriteHeader(http.StatusAccepted)
 
@@ -103,7 +103,7 @@ func removeCustomer(w http.ResponseWriter, r *http.Request) {
 	chosenCustomerName := inputCustomerInfo(0)
 
 	// Checks if Customer Exists
-	customerExistence := doesCustomerExist(true)
+	customerExistence := doesCustomerExist(true, chosenCustomerName)
 	if customerExistence != (Customer{}) {
 		w.WriteHeader(http.StatusAccepted)
 		delete(customerMap, customerExistence)
