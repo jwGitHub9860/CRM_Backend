@@ -130,16 +130,22 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 }*/
 
 func updateCustomer(w http.ResponseWriter, r *http.Request) {
+	updateSuccessful := false
+
 	// Choose Customer Name to Choose which Customer to Update
 	chosenCustomerName := inputCustomerInfo(5)
 
 	// Checks if Customer Exists
 	customerExistence := doesCustomerExist(true, chosenCustomerName)
 	if customerExistence != (Customer{}) {
-		w.WriteHeader(http.StatusAccepted)
+		chooseCustomerInfo(updateSuccessful)
 
-		// FIX THIS
-		fmt.Print(customerExistence)
+		// Checks if Update is Successful (error can occur when choosing "contacted" boolean)
+		if updateSuccessful {
+			w.WriteHeader(http.StatusAccepted)
+		} else {
+			w.WriteHeader(http.StatusConflict)
+		}
 	} else {
 		w.WriteHeader(http.StatusConflict)
 	}
