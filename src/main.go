@@ -39,9 +39,13 @@ var whatToInputStatements = []string{
 }
 
 func inputCustomerInfo(inputPrintStatementNumber int) string {
+	// Organizes Terminal Output by Keeping "whatToInputStatements" Strings Aligned to Left Side of Terminal
+	// (CANNOT do anything about Initial Two New Lines when server starts)
+	fmt.Println("\n")
+
 	// Takes User Input
 	reader := bufio.NewReader(os.Stdin)
-	fmt.Println("\n", whatToInputStatements[inputPrintStatementNumber])
+	fmt.Println(whatToInputStatements[inputPrintStatementNumber])
 	userInput, _ := reader.ReadString('\n')
 	return strings.Trim(userInput, "\r\n")
 }
@@ -81,7 +85,7 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 	customerExistence := doesCustomerExist(true, inputCustomerInfo(0))
 	if customerExistence != (Customer{}) {
 		w.WriteHeader(http.StatusAccepted)
-		fmt.Print("\n", customerExistence)
+		fmt.Print(customerExistence)
 	} else {
 		w.WriteHeader(http.StatusConflict)
 	}
@@ -129,6 +133,9 @@ func removeCustomer(w http.ResponseWriter, r *http.Request) {
 		fmt.Print("AFTER key:", key)
 
 		delete(customerMap, key)
+
+		// Organizes Terminal Output by Preventing "print statement" & Result of Postman request from Being On the Same Line
+		fmt.Println("\n")
 	} else {
 		w.WriteHeader(http.StatusConflict)
 	}
