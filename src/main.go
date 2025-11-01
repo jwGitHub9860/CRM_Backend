@@ -102,7 +102,7 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 	} else {
 		w.WriteHeader(http.StatusConflict)
 	}
-}
+}*/
 
 func updateCustomer(w http.ResponseWriter, r *http.Request) {
 	// Checks if Customer Exists
@@ -115,7 +115,7 @@ func updateCustomer(w http.ResponseWriter, r *http.Request) {
 	} else {
 		w.WriteHeader(http.StatusConflict)
 	}
-}*/
+}
 
 func removeCustomer(w http.ResponseWriter, r *http.Request) {
 	// Saves Customer Name that User Chose
@@ -145,8 +145,8 @@ func main() {
 
 	router.HandleFunc("/customers/{id}", getCustomer).Methods("GET")
 	router.HandleFunc("/customers", getAllCustomers).Methods("GET")
-	/*router.HandleFunc("/customers", addCustomer).Methods("POST")
-	router.HandleFunc("/customers/{id}", updateCustomer).Methods("PUT")*/
+	//router.HandleFunc("/customers", addCustomer).Methods("POST")
+	router.HandleFunc("/customers/{id}", updateCustomer).Methods("PUT")
 	router.HandleFunc("/customers/{id}", removeCustomer).Methods("DELETE")
 
 	fmt.Println("Server is starting...")
