@@ -27,10 +27,18 @@ var customerMap = map[uint32]Customer{
 	2: {"Jane Doe", "Payer", "janedoe@gmail.com", "987-654-3210", false},
 }
 
+var whatToInputStatements = []string{
+	"Enter Customer Name: ",
+	"Enter Customer Role: ",
+	"Enter Customer Email: ",
+	"Enter Customer Phone: ",
+	"Enter Customer contacted: ",
+}
+
 func inputCustomerInfo(inputPrintStatementNumber int) string {
 	// Takes User Input
 	reader := bufio.NewReader(os.Stdin)
-	fmt.Println("Enter Customer Name: ")
+	fmt.Println(whatToInputStatements[inputPrintStatementNumber])
 	userInput, _ := reader.ReadString('\n')
 	return strings.Trim(userInput, "\r\n")
 }
