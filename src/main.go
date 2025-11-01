@@ -27,13 +27,15 @@ var customerMap = map[uint32]Customer{
 	2: {"Jane Doe", "Payer", "janedoe@gmail.com", "987-654-3210", false},
 }
 
-func doesCustomerExist(customerNotFound bool) Customer {
+func inputCustomerInfo(inputPrintStatementNumber int) string {
 	// Takes User Input
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Println("Enter Customer Name: ")
 	userInput, _ := reader.ReadString('\n')
-	userInput = strings.Trim(userInput, "\r\n")
+	return strings.Trim(userInput, "\r\n")
+}
 
+func doesCustomerExist(customerNotFound bool) Customer {
 	// Checks if "userInput" Exists
 	for _, customer := range customerMap {
 		// MUST USE "strings.Compare(userInput, customer.name) == 0", Using "userInput == customer.name" Defines "userInput" & "customer.name" as NOT EQUAL EVEN THOUGH THEY ARE EQUAL
@@ -97,6 +99,9 @@ func updateCustomer(w http.ResponseWriter, r *http.Request) {
 }*/
 
 func removeCustomer(w http.ResponseWriter, r *http.Request) {
+	// Saves Customer Name that User Chose
+	chosenCustomerName := inputCustomerInfo(0)
+
 	// Checks if Customer Exists
 	customerExistence := doesCustomerExist(true)
 	if customerExistence != (Customer{}) {
