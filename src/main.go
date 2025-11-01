@@ -25,6 +25,9 @@ type Customer struct {
 // Did not define because it will CONSTANTLY CHANGE
 var key uint32
 
+// Did not define because it will CONSTANTLY CHANGE
+var newCustomerName string
+
 var customerMap = map[uint32]Customer{
 	1: {"John Doe", "Buyer", "johndoe@gmail.com", "123-456-7890", true},
 	2: {"Jane Doe", "Payer", "janedoe@gmail.com", "987-654-3210", false},
@@ -57,6 +60,10 @@ func chooseCustomerInfo(choosingSuccessful bool) {
 
 	for i := 0; i < 5; i++ {
 		customerInfoStrings[i] = inputCustomerInfo(i)
+
+		// Defines "newCustomerName" for "addCustomer()" function
+		newCustomerName = customerInfoStrings[0]
+
 		if customerInfoStrings[4] == "true" {
 			customerMap[key] = Customer{customerInfoStrings[0], customerInfoStrings[1],
 				customerInfoStrings[2], customerInfoStrings[3],
@@ -117,13 +124,21 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 }
 
 func addCustomer(w http.ResponseWriter, r *http.Request) {
-	// Checks if Customer Exists
-	customerExistence := doesCustomerExist(true)
-	if customerExistence != (Customer{}) {
-		w.WriteHeader(http.StatusAccepted)
+	additionSuccessful = chooseCustomerInfo(false)
 
-		// FIX THIS
-		add(customerExistence)
+	// Checks if Addition is Successful (error can occur when choosing "contacted" boolean)
+	if additionSuccessful {
+		// Checks if New Customer ALREADY Exists
+		customerExistence := doesCustomerExist(true, newCustomerName)
+
+		if customerExistence != (Customer{}) {
+			// Deletes Newly Added Customer if it's DUPLICATE
+			delete(customerMap, key)
+
+			w.WriteHeader(http.StatusConflict)
+		} else {
+			w.WriteHeader(http.StatusAccepted)
+		}
 	} else {
 		w.WriteHeader(http.StatusConflict)
 	}
