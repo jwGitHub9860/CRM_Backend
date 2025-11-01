@@ -116,7 +116,7 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-/*func addCustomer(w http.ResponseWriter, r *http.Request) {
+func addCustomer(w http.ResponseWriter, r *http.Request) {
 	// Checks if Customer Exists
 	customerExistence := doesCustomerExist(true)
 	if customerExistence != (Customer{}) {
@@ -127,7 +127,7 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 	} else {
 		w.WriteHeader(http.StatusConflict)
 	}
-}*/
+}
 
 func updateCustomer(w http.ResponseWriter, r *http.Request) {
 	updateSuccessful := false
@@ -179,7 +179,7 @@ func main() {
 
 	router.HandleFunc("/customers/{id}", getCustomer).Methods("GET")
 	router.HandleFunc("/customers", getAllCustomers).Methods("GET")
-	//router.HandleFunc("/customers", addCustomer).Methods("POST")
+	router.HandleFunc("/customers", addCustomer).Methods("POST")
 	router.HandleFunc("/customers/{id}", updateCustomer).Methods("PUT")
 	router.HandleFunc("/customers/{id}", removeCustomer).Methods("DELETE")
 
