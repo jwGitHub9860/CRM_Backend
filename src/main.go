@@ -22,6 +22,9 @@ type Customer struct {
 	contacted bool
 }
 
+// Did not define because it will CONSTANTLY CHANGE
+var key uint32
+
 var customerMap = map[uint32]Customer{
 	1: {"John Doe", "Buyer", "johndoe@gmail.com", "123-456-7890", true},
 	2: {"Jane Doe", "Payer", "janedoe@gmail.com", "987-654-3210", false},
@@ -110,11 +113,18 @@ func removeCustomer(w http.ResponseWriter, r *http.Request) {
 	// Saves Customer Name that User Chose
 	chosenCustomerName := inputCustomerInfo(0)
 
+	// TESTING CODE -> check if "key" is correct
+	fmt.Print("BEFORE key:", key)
+
 	// Checks if Customer Exists
 	customerExistence := doesCustomerExist(true, chosenCustomerName)
 	if customerExistence != (Customer{}) {
 		w.WriteHeader(http.StatusAccepted)
-		delete(customerMap, customerExistence)
+
+		// TESTING CODE -> check if "key" is correct
+		fmt.Print("AFTER key:", key)
+
+		delete(customerMap, key)
 	} else {
 		w.WriteHeader(http.StatusConflict)
 	}
