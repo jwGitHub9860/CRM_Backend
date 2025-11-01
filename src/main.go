@@ -36,6 +36,7 @@ var whatToInputStatements = []string{
 	"Enter Customer Email: ",
 	"Enter Customer Phone: ",
 	"Enter Customer contacted: ",
+	"Choose Customer to Update (via customer name): ",
 }
 
 func inputCustomerInfo(inputPrintStatementNumber int) string {
@@ -105,6 +106,9 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 }*/
 
 func updateCustomer(w http.ResponseWriter, r *http.Request) {
+	// Choose Customer Name to Choose which Customer to Update
+	chosenCustomerName := inputCustomerInfo(5)
+
 	// Checks if Customer Exists
 	customerExistence := doesCustomerExist(true, chosenCustomerName)
 	if customerExistence != (Customer{}) {
