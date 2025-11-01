@@ -54,7 +54,7 @@ func inputCustomerInfo(inputPrintStatementNumber int) string {
 	return strings.Trim(userInput, "\r\n")
 }
 
-func chooseCustomerInfo(choosingSuccessful bool) {
+func chooseCustomerInfo() bool {
 	// Initializes Strings to EMPTY because Strings will CONSTANTLY CHANGE
 	customerInfoStrings := [5]string{}
 
@@ -69,17 +69,20 @@ func chooseCustomerInfo(choosingSuccessful bool) {
 				customerInfoStrings[2], customerInfoStrings[3],
 				true,
 			}
-			choosingSuccessful = true
+			return true
 		} else if customerInfoStrings[4] != "false" {
 			customerMap[key] = Customer{customerInfoStrings[0], customerInfoStrings[1],
 				customerInfoStrings[2], customerInfoStrings[3],
 				false,
 			}
-			choosingSuccessful = true
+			return true
 		} else {
-			choosingSuccessful = false
+			return false
 		}
 	}
+
+	// Fixes "missing return statement" Error
+	return false
 }
 
 func doesCustomerExist(customerNotFound bool, userInput string) Customer {
@@ -124,7 +127,7 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 }
 
 func addCustomer(w http.ResponseWriter, r *http.Request) {
-	additionSuccessful = chooseCustomerInfo(false)
+	additionSuccessful := chooseCustomerInfo()
 
 	// Checks if Addition is Successful (error can occur when choosing "contacted" boolean)
 	if additionSuccessful {
@@ -145,15 +148,13 @@ func addCustomer(w http.ResponseWriter, r *http.Request) {
 }
 
 func updateCustomer(w http.ResponseWriter, r *http.Request) {
-	updateSuccessful := false
-
 	// Choose Customer Name to Choose which Customer to Update
 	chosenCustomerName := inputCustomerInfo(5)
 
 	// Checks if Customer Exists
 	customerExistence := doesCustomerExist(true, chosenCustomerName)
 	if customerExistence != (Customer{}) {
-		chooseCustomerInfo(updateSuccessful)
+		updateSuccessful := chooseCustomerInfo()
 
 		// Checks if Update is Successful (error can occur when choosing "contacted" boolean)
 		if updateSuccessful {
