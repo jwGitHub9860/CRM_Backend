@@ -121,16 +121,10 @@ func removeCustomer(w http.ResponseWriter, r *http.Request) {
 	// Saves Customer Name that User Chose
 	chosenCustomerName := inputCustomerInfo(0)
 
-	// TESTING CODE -> check if "key" is correct
-	fmt.Print("BEFORE key:", key)
-
 	// Checks if Customer Exists
 	customerExistence := doesCustomerExist(true, chosenCustomerName)
 	if customerExistence != (Customer{}) {
 		w.WriteHeader(http.StatusAccepted)
-
-		// TESTING CODE -> check if "key" is correct
-		fmt.Print("AFTER key:", key)
 
 		delete(customerMap, key)
 
