@@ -48,10 +48,14 @@ func inputCustomerInfo(inputPrintStatementNumber int) string {
 
 func doesCustomerExist(customerNotFound bool, userInput string) Customer {
 	// Checks if "userInput" Exists
-	for _, customer := range customerMap {
+	for mapKey, customer := range customerMap {
 		// MUST USE "strings.Compare(userInput, customer.name) == 0", Using "userInput == customer.name" Defines "userInput" & "customer.name" as NOT EQUAL EVEN THOUGH THEY ARE EQUAL
 		if strings.Compare(userInput, customer.name) == 0 {
 			customerNotFound = false
+
+			// Defines "key" for "delete()" command to Indicate Which Customer to Remove
+			key = mapKey
+
 			return customer
 		}
 	}
