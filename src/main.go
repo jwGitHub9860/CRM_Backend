@@ -69,32 +69,30 @@ func chooseCustomerInfo() bool {
 
 		// Defines "newCustomerName" for "addCustomer()" function
 		newCustomerName = customerInfoStrings[0]
-
-		if customerInfoStrings[4] == "true" {
-			// TESTING CODE
-			fmt.Println("Inside 'chooseCustomerInfo()' For Loop IF STATEMENT (true)")
-
-			customerMap[key] = Customer{customerInfoStrings[0], customerInfoStrings[1],
-				customerInfoStrings[2], customerInfoStrings[3],
-				true,
-			}
-			return true
-		} else if customerInfoStrings[4] != "false" {
-			// TESTING CODE
-			fmt.Println("Inside 'chooseCustomerInfo()' For Loop IF STATEMENT (false)")
-
-			customerMap[key] = Customer{customerInfoStrings[0], customerInfoStrings[1],
-				customerInfoStrings[2], customerInfoStrings[3],
-				false,
-			}
-			return true
-		} else {
-			return false
-		}
 	}
 
-	// Fixes "missing return statement" Error
-	return false
+	// Adds or Updates Customer Info
+	if customerInfoStrings[4] == "true" {
+		// TESTING CODE
+		fmt.Println("Inside 'chooseCustomerInfo()' For Loop IF STATEMENT (true)")
+
+		customerMap[key] = Customer{customerInfoStrings[0], customerInfoStrings[1],
+			customerInfoStrings[2], customerInfoStrings[3],
+			true,
+		}
+		return true
+	} else if customerInfoStrings[4] != "false" {
+		// TESTING CODE
+		fmt.Println("Inside 'chooseCustomerInfo()' For Loop IF STATEMENT (false)")
+
+		customerMap[key] = Customer{customerInfoStrings[0], customerInfoStrings[1],
+			customerInfoStrings[2], customerInfoStrings[3],
+			false,
+		}
+		return true
+	} else {
+		return false
+	}
 }
 
 func doesCustomerExist(customerNotFound bool, userInput string) Customer {
