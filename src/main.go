@@ -61,6 +61,7 @@ func chooseCustomerInfo(addingNewCustomer bool) bool {
 
 	// Checks if New Customer OR Updated Customer ALREADY Exists for "addCustomer()" function
 	if doesCustomerExist(true, customerInfoStrings[0]) != (Customer{}) {
+		fmt.Println("Customer already exists.")
 		return false
 	}
 
@@ -83,6 +84,7 @@ func chooseCustomerInfo(addingNewCustomer bool) bool {
 		}
 		return true
 	} else {
+		fmt.Println("Customer contacted must be either \"true\" or \"false\".")
 		return false
 	}
 }
