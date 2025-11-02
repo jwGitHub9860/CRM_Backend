@@ -71,6 +71,9 @@ func chooseCustomerInfo() bool {
 		newCustomerName = customerInfoStrings[0]
 	}
 
+	// TESTING CODE
+	fmt.Println("customerInfoStrings[4]:", customerInfoStrings[4])
+
 	// Adds or Updates Customer Info
 	if customerInfoStrings[4] == "true" {
 		// TESTING CODE
