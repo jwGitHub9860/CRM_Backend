@@ -74,6 +74,7 @@ func chooseCustomerInfo() bool {
 
 	// TESTING CODE
 	fmt.Println("customerInfoStrings[4]:", customerInfoStrings[4])
+	fmt.Println("\nkey:", key)
 
 	// Adds or Updates Customer Info
 	if customerInfoStrings[4] == "true" {
