@@ -155,16 +155,10 @@ func addCustomer(w http.ResponseWriter, r *http.Request) {
 }
 
 func updateCustomer(w http.ResponseWriter, r *http.Request) {
-	// Choose Customer Name to Choose which Customer to Update
-	chosenCustomerName := inputCustomerInfo(5)
-
-	// Checks if Customer Exists
-	customerExistence := doesCustomerExist(true, chosenCustomerName)
-	if customerExistence != (Customer{}) {
-		updateSuccessful := chooseCustomerInfo()
-
+	// Checks if Customer Exists & "inputCustomerInfo(5)" -> Choose Customer Name to Choose which Customer to Update
+	if doesCustomerExist(true, inputCustomerInfo(5)) != (Customer{}) {
 		// Checks if Update is Successful (error can occur when choosing "contacted" boolean)
-		if updateSuccessful {
+		if chooseCustomerInfo() {
 			w.WriteHeader(http.StatusAccepted)
 		} else {
 			w.WriteHeader(http.StatusConflict)
@@ -175,18 +169,14 @@ func updateCustomer(w http.ResponseWriter, r *http.Request) {
 }
 
 func removeCustomer(w http.ResponseWriter, r *http.Request) {
-	// Saves Customer Name that User Chose
-	chosenCustomerName := inputCustomerInfo(0)
-
-	// Checks if Customer Exists
-	customerExistence := doesCustomerExist(true, chosenCustomerName)
-	if customerExistence != (Customer{}) {
-		w.WriteHeader(http.StatusAccepted)
-
+	// "inputCustomerInfo(0)" -> Saves Customer Name that User Chose & Checks if Customer Exists
+	if doesCustomerExist(true, inputCustomerInfo(0)) != (Customer{}) {
 		delete(customerMap, key)
 
 		// Organizes Terminal Output by Preventing "print statement" & Result of Postman request from Being On the Same Line
 		fmt.Println("\n")
+
+		w.WriteHeader(http.StatusAccepted)
 	} else {
 		w.WriteHeader(http.StatusConflict)
 	}
