@@ -22,8 +22,9 @@ type Customer struct {
 	contacted bool
 }
 
-// Did not define because it will CONSTANTLY CHANGE
-var key uint32
+// Defined with Initial Value to allow "addCustomer()" function to Add New Customer to "customerMap"
+// will CONSTANTLY CHANGE
+var key uint32 = 3
 
 // Did not define because it will CONSTANTLY CHANGE
 var newCustomerName string
