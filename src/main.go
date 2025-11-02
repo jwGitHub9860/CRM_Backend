@@ -129,6 +129,10 @@ func doesCustomerExist(customerNotFound bool, userInput string) Customer {
 }
 
 func getAllCustomers(w http.ResponseWriter, r *http.Request) {
+	// Organizes Terminal Output by Keeping "whatToInputStatements" Strings Aligned to Left Side of Terminal
+	// (CANNOT do anything about Initial Two New Lines when server starts)
+	fmt.Println("\n")
+
 	for _, customer := range customerMap {
 		fmt.Println(customer)
 	}
