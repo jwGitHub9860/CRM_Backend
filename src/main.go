@@ -66,8 +66,7 @@ func chooseCustomerInfo(addingNewCustomer bool) bool {
 	}
 
 	// Checks if New Customer OR Updated Customer ALREADY Exists for "addCustomer()" function
-	customerExistence := doesCustomerExist(true, customerInfoStrings[0])
-	if customerExistence != (Customer{}) {
+	if doesCustomerExist(true, customerInfoStrings[0]) != (Customer{}) {
 		return false
 	}
 
