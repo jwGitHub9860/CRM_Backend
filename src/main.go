@@ -138,8 +138,8 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 	// Checks if Customer Exists
 	customerExistence := doesCustomerExist(true, inputCustomerInfo(0))
 	if customerExistence != (Customer{}) {
+		fmt.Print(customerExistence, "\n")
 		w.WriteHeader(http.StatusAccepted)
-		fmt.Print(customerExistence)
 	} else {
 		w.WriteHeader(http.StatusConflict)
 	}
