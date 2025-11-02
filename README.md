@@ -41,6 +41,8 @@ Kfir, and mbuechmann. “Use different structs as a value in map golang.” _Sta
 
 “Online Compiler and Debugger for C/C++.” _GDB Online Debugger_, www.onlinegdb.com/. Accessed 28 Oct. 2025.
 
+Philip, and Jeff Emanuel. “Using Count to Find the Last Element in Struct / Map.” _Go Forum_, 4 Feb. 2022, forum.golangbridge.org/t/using-count-to-find-the-last-element-in-struct-map/26367. Accessed 1 Nov. 2025.
+
 r/golang, and edgmnt_net. “CRUD, Return Empty Struct or Nil?” _Reddit_, 2022, www.reddit.com/r/golang/comments/vd1upf/crud_return_empty_struct_or_nil/. Accessed 30 Oct. 2025.
 
 r/golang, and phlatphrog. “How to Pass a Generic Map Parameter to Function.” _Reddit_, 2017, www.reddit.com/r/golang/comments/7p879p/how_to_pass_a_generic_map_parameter_to_function/. Accessed 27 Oct. 2025.
