@@ -22,9 +22,8 @@ type Customer struct {
 	contacted bool
 }
 
-// Defined with Initial Value to allow "addCustomer()" function to Add New Customer to "customerMap"
-// will CONSTANTLY CHANGE
-var key uint32 = 3
+// Undefined because "key" will CONSTANTLY CHANGE
+var key uint32
 
 var customerMap = map[uint32]Customer{
 	1: {"John Doe", "Buyer", "johndoe@gmail.com", "123-456-7890", true},
@@ -52,7 +51,7 @@ func inputCustomerInfo(inputPrintStatementNumber int) string {
 	return strings.Trim(userInput, "\r\n")
 }
 
-func chooseCustomerInfo() bool {
+func chooseCustomerInfo(addingNewCustomer bool) bool {
 	// TESTING CODE
 	fmt.Println("Inside 'chooseCustomerInfo()' function")
 
@@ -70,6 +69,11 @@ func chooseCustomerInfo() bool {
 	customerExistence := doesCustomerExist(true, customerInfoStrings[0])
 	if customerExistence != (Customer{}) {
 		return false
+	}
+
+	// Defines "key" to allow "addCustomer()" function to Add New Customer to "customerMap"
+	if addingNewCustomer {
+		key = 3
 	}
 
 	// TESTING CODE
@@ -152,7 +156,7 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 
 func addCustomer(w http.ResponseWriter, r *http.Request) {
 	// Checks if Addition is Successful (error can occur when choosing "contacted" boolean)
-	if chooseCustomerInfo() {
+	if chooseCustomerInfo(true) {
 		w.WriteHeader(http.StatusAccepted)
 	} else {
 		w.WriteHeader(http.StatusConflict)
@@ -163,7 +167,7 @@ func updateCustomer(w http.ResponseWriter, r *http.Request) {
 	// Checks if Customer Exists & "inputCustomerInfo(5)" -> Choose Customer Name to Choose which Customer to Update
 	if doesCustomerExist(true, inputCustomerInfo(5)) != (Customer{}) {
 		// Checks if Update is Successful (error can occur when choosing "contacted" boolean)
-		if chooseCustomerInfo() {
+		if chooseCustomerInfo(false) {
 			w.WriteHeader(http.StatusAccepted)
 		} else {
 			w.WriteHeader(http.StatusConflict)
