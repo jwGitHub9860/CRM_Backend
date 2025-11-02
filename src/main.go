@@ -52,16 +52,10 @@ func inputCustomerInfo(inputPrintStatementNumber int) string {
 }
 
 func chooseCustomerInfo(addingNewCustomer bool) bool {
-	// TESTING CODE
-	fmt.Println("Inside 'chooseCustomerInfo()' function")
-
 	// Initializes Strings to EMPTY because Strings will CONSTANTLY CHANGE
 	customerInfoStrings := [5]string{}
 
 	for i := 0; i < 5; i++ {
-		// TESTING CODE
-		fmt.Println("Inside 'chooseCustomerInfo()' FOR LOOP")
-
 		customerInfoStrings[i] = inputCustomerInfo(i)
 	}
 
@@ -75,29 +69,14 @@ func chooseCustomerInfo(addingNewCustomer bool) bool {
 		key = 3
 	}
 
-	// TESTING CODE
-	fmt.Println("customerInfoStrings[4]:", customerInfoStrings[4])
-	fmt.Println("\nkey:", key)
-
 	// Adds or Updates Customer Info
 	if customerInfoStrings[4] == "true" {
-		// TESTING CODE
-		fmt.Println("Inside 'chooseCustomerInfo()' For Loop IF STATEMENT (true)")
-
 		customerMap[key] = Customer{customerInfoStrings[0], customerInfoStrings[1],
 			customerInfoStrings[2], customerInfoStrings[3],
 			true,
 		}
-
-		// TESTING CODE
-		fmt.Println("customerMap[key]:", customerMap[key])
-		fmt.Println("customerMap[3]:", customerMap[3])
-
 		return true
 	} else if customerInfoStrings[4] == "false" {
-		// TESTING CODE
-		fmt.Println("Inside 'chooseCustomerInfo()' For Loop IF STATEMENT (false)")
-
 		customerMap[key] = Customer{customerInfoStrings[0], customerInfoStrings[1],
 			customerInfoStrings[2], customerInfoStrings[3],
 			false,
