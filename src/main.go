@@ -88,6 +88,7 @@ func chooseCustomerInfo() bool {
 
 		// TESTING CODE
 		fmt.Println("customerMap[key]:", customerMap[key])
+		fmt.Println("customerMap[3]:", customerMap[3])
 
 		return true
 	} else if customerInfoStrings[4] == "false" {
