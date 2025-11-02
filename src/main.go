@@ -84,7 +84,7 @@ func chooseCustomerInfo() bool {
 			true,
 		}
 		return true
-	} else if customerInfoStrings[4] != "false" {
+	} else if customerInfoStrings[4] == "false" {
 		// TESTING CODE
 		fmt.Println("Inside 'chooseCustomerInfo()' For Loop IF STATEMENT (false)")
 
