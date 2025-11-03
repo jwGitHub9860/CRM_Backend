@@ -165,12 +165,12 @@ func addCustomer(w http.ResponseWriter, r *http.Request) {
 				w.WriteHeader(http.StatusCreated)
 			}
 		}
-
-		// 6. Returns "customerMap"
-		json.NewEncoder(w).Encode(customerMap)
 	} else {
 		w.WriteHeader(http.StatusConflict)
 	}
+
+	// 6. Returns "customerMap"
+	json.NewEncoder(w).Encode(customerMap)
 }
 
 func updateCustomer(w http.ResponseWriter, r *http.Request) {
