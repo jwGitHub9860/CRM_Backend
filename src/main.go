@@ -119,9 +119,37 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 	// (CANNOT do anything about Initial Two New Lines when server starts)
 	fmt.Println("\n")
 
+	// Returns JSON Back to User
+	// 1. Set content type to JSON
+	w.Header().Set("Content-Type", "application/json")
+
+	// 2. Keep track of new entry
+	var newEntry map[uint32]Customer
+
+	// 3. Read the request
+	reqBody, _ := ioutil.ReadAll(r.Body)
+
+	// 4. Parse JSON body
+	json.Unmarshal(reqBody, &newEntry)
+
+	// 5. Add new entry to dictionary
+	for k, v := range newEntry {
+		// Responds with conflict if entry exists
+		if _, ok := customerMap[k]; ok {
+			w.WriteHeader(http.StatusConflict)
+		} else {
+			// Responds with OK if entry does not already exist
+			customerMap[k] = v
+			w.WriteHeader(http.StatusCreated)
+		}
+	}
+
 	for _, customer := range customerMap {
 		fmt.Println(customer)
 	}
+
+	// 6. Returns "customerMap"
+	json.NewEncoder(w).Encode(customerMap)
 }
 
 func getCustomer(w http.ResponseWriter, r *http.Request) {
@@ -140,36 +168,10 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 func addCustomer(w http.ResponseWriter, r *http.Request) {
 	// Checks if Addition is Successful (error can occur when choosing "contacted" boolean)
 	if chooseCustomerInfo(true) {
-		// Returns JSON Back to User
-		// 1. Set content type to JSON
-		w.Header().Set("Content-Type", "application/json")
-
-		// 2. Keep track of new entry
-		var newEntry map[uint32]Customer
-
-		// 3. Read the request
-		reqBody, _ := ioutil.ReadAll(r.Body)
-
-		// 4. Parse JSON body
-		json.Unmarshal(reqBody, &newEntry)
-
-		// 5. Add new entry to dictionary
-		for k, v := range newEntry {
-			// Responds with conflict if entry exists
-			if _, ok := customerMap[k]; ok {
-				w.WriteHeader(http.StatusConflict)
-				// Responds with OK if entry does not already exist
-			} else {
-				customerMap[k] = v
-				w.WriteHeader(http.StatusCreated)
-			}
-		}
+		w.WriteHeader(http.StatusAccepted)
 	} else {
 		w.WriteHeader(http.StatusConflict)
 	}
-
-	// 6. Returns "customerMap"
-	json.NewEncoder(w).Encode(customerMap)
 }
 
 func updateCustomer(w http.ResponseWriter, r *http.Request) {
