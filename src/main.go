@@ -26,10 +26,8 @@ type Customer struct {
 // Undefined because "key" will CONSTANTLY CHANGE
 var key uint32
 
-var customerMap = map[uint32]Customer{
-	1: {"John Doe", "Buyer", "johndoe@gmail.com", "123-456-7890", true},
-	2: {"Jane Doe", "Payer", "janedoe@gmail.com", "987-654-3210", false},
-}
+// MUST BE EMPTY to Display "customerMap" on API in JSON
+var customerMap = map[uint32]Customer{}
 
 var whatToInputStatements = []string{
 	"Enter Customer Name: ",
@@ -118,6 +116,11 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 	// Organizes Terminal Output by Keeping "whatToInputStatements" Strings Aligned to Left Side of Terminal
 	// (CANNOT do anything about Initial Two New Lines when server starts)
 	fmt.Println("\n")
+
+	// Initial Customer Data
+	// Keys MUST BE STRINGS Because JSON does NOT SUPPORT "uint32" (Structs should Preferably be Strings)
+	c1 := `{"1": {"John Doe", "Buyer", "johndoe@gmail.com", "123-456-7890", true},}`
+	c2 := `{"2": {"Jane Doe", "Payer", "janedoe@gmail.com", "987-654-3210", false},}`
 
 	// Returns JSON Back to User
 	// 1. Set content type to JSON
