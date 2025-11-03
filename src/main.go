@@ -3,13 +3,12 @@ package main
 import (
 	"bufio"
 	"encoding/json"
+	"fmt"
+
+	//"go/reader"
 	"io/ioutil"
 	"strings"
 
-	//"encoding/json"
-	"fmt"
-	//"go/reader"
-	//"io/ioutil"
 	"net/http"
 	"os"
 
