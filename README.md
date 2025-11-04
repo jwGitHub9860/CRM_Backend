@@ -33,15 +33,21 @@ hhh, et al. “Simple Way of Getting Key Depending on Value from Hashmap in Gola
 
 Ihab, Naguib, et al. “Return Nil for a Struct in Go.” Edited by Jonathan Hall, _Stack Overflow_, 5 June 2018, stackoverflow.com/questions/50697914/return-nil-for-a-struct-in-go. Accessed 30 Oct. 2025.
 
+Joiner, Matt, and maerics. “Convert String to Integer Type in Go?” Edited by Icza and Pallav Agarwal, _Stack Overflow_, 9 July 2020, stackoverflow.com/questions/4278430/convert-string-to-integer-type-in-go. Accessed 3 Nov. 2025.
+
 Kelche, Kevin. “How to Accept User Input with Spaces in Golang.” _Kelche_, 29 July 2023, www.kelche.co/blog/go/user-input-with-spaces/. Accessed 29 Oct. 2025.
 
 Kfir, and mbuechmann. “Use different structs as a value in map golang.” _Stack Overflow_, 8 Nov. 2018, stackoverflow.com/questions/53204138/use-different-structs-as-a-value-in-map-golang. Accessed 27 Oct. 2025.
 
 “MLA Works Cited: Electronic Sources (Web Publications).” _MLA Works Cited: Electronic Sources - Purdue OWL® - Purdue University_, owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_works_cited_electronic_sources.html. Accessed 26 Oct 2025.
 
+Naresh, and peterSO. “Convert String to Uint in Go Lang.” Edited by Danack, _Stack Overflow_, 2 Feb. 2016, stackoverflow.com/questions/35154875/convert-string-to-uint-in-go-lang. Accessed 3 Nov. 2025.
+
 “Online Compiler and Debugger for C/C++.” _GDB Online Debugger_, www.onlinegdb.com/. Accessed 28 Oct. 2025.
 
 Philip, and Jeff Emanuel. “Using Count to Find the Last Element in Struct / Map.” _Go Forum_, 4 Feb. 2022, forum.golangbridge.org/t/using-count-to-find-the-last-element-in-struct-map/26367. Accessed 1 Nov. 2025.
+
+r/golang. “Convert Uint to String.” _Reddit_, 2024, www.reddit.com/r/golang/comments/1gjlerl/convert_uint_to_string/. Accessed 3 Nov. 2025.
 
 r/golang, and edgmnt_net. “CRUD, Return Empty Struct or Nil?” _Reddit_, 2022, www.reddit.com/r/golang/comments/vd1upf/crud_return_empty_struct_or_nil/. Accessed 30 Oct. 2025.
 
@@ -50,6 +56,8 @@ r/golang, and phlatphrog. “How to Pass a Generic Map Parameter to Function.”
 Rees, Lucas. “Working with Null Values in Go: A Complete Guide.” _Go/Golang Programming and Scripting_, 2 Feb. 2021, golang.howtos.io/working-with-null-values-in-go-a-complete-guide/. Accessed 30 Oct. 2025.
 
 Sanjeev. “Custom Golang HTTP Router.” _Medium_, Medium, 13 June 2021, sanjeevsiva.medium.com/custom-golang-http-router-970a309531d7. Accessed 28 Oct. 2025.
+
+“Strconv.” _Strconv Package - Strconv - Go Packages_, pkg.go.dev/strconv. Accessed 3 Nov. 2025.
 
 Wada, Kengo. “Go Routing 101: Handling and Grouping Routes with Net/Http.” _DEV Community_, 2 Nov. 2024, dev.to/kengowada/go-routing-101-handling-and-grouping-routes-with-nethttp-4k0e. Accessed 28 Oct. 2025.
 
