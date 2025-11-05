@@ -26,7 +26,7 @@ type Customer struct {
 // Undefined because "key" will CONSTANTLY CHANGE
 var key uint32
 
-// MUST BE EMPTY to Display "customerMap" on API in JSON
+// Map for Terminal & Other Functions
 var customerMap = map[uint32]Customer{
 	1: {"John Doe", "Buyer", "johndoe@gmail.com", "123-456-7890", true},
 	2: {"Jane Doe", "Payer", "janedoe@gmail.com", "987-654-3210", false},
