@@ -126,14 +126,26 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 	// 1. Set content type to JSON
 	w.Header().Set("Content-Type", "application/json")
 
+	// TESTING CODE
+	fmt.Println("PASSED Step 1")
+
 	// 2. Keep track of new entry
 	var newEntry map[uint32]Customer
+
+	// TESTING CODE
+	fmt.Println("PASSED Step 2")
 
 	// 3. Read the request
 	reqBody, _ := ioutil.ReadAll(r.Body)
 
+	// TESTING CODE
+	fmt.Println("PASSED Step 3")
+
 	// 4. Parse JSON body
 	json.Unmarshal(reqBody, &newEntry)
+
+	// TESTING CODE
+	fmt.Println("PASSED Step 4")
 
 	// 5. Add new entry to dictionary
 	for k, v := range newEntry {
@@ -147,12 +159,18 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
+	// TESTING CODE
+	fmt.Println("PASSED Step 5")
+
 	for _, customer := range customerMap {
 		fmt.Println(customer)
 	}
 
 	// 6. Returns "customerMap"
 	json.NewEncoder(w).Encode(customerMap)
+
+	// TESTING CODE
+	fmt.Println("PASSED Step 6")
 }
 
 func getCustomer(w http.ResponseWriter, r *http.Request) {
