@@ -35,7 +35,7 @@ var customerMap = map[uint32]Customer{
 
 // Keys & Values MUST BE STRINGS Because JSON does NOT SUPPORT "uint32" AND/OR "structs"
 // (Need to Make CUSTOM Unmarshal Function to Display "customerMap" onto API as JSON Response)
-var initial_customer_data = map[string]string{
+var customerMapForAPI = map[string]string{
 	"1": "John Doe Buyer johndoe@gmail.com 123-456-7890 true",
 	"2": "Jane Doe Payer janedoe@gmail.com 987-654-3210 false",
 	"3": "Jill Dole Payer jilldole@gmail.com 012-345-6789 true",
@@ -153,18 +153,18 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 	// 5. Add new entry to "customerMap"
 	for k, v := range newEntry_test_3 {
 		// Responds with conflict if entry exists
-		if _, ok := initial_customer_data[k]; ok {
+		if _, ok := customerMapForAPI[k]; ok {
 			w.WriteHeader(http.StatusConflict)
 		} else {
 			// Responds with OK if entry does not already exist
-			initial_customer_data[k] = v
+			customerMapForAPI[k] = v
 			w.WriteHeader(http.StatusCreated)
 		}
 	}
 
 	// 6. Returns "customerMap"
 	//json.NewEncoder(w).Encode(customerMap)
-	json.NewEncoder(w).Encode(initial_customer_data)
+	json.NewEncoder(w).Encode(customerMapForAPI)
 }
 
 func getCustomer(w http.ResponseWriter, r *http.Request) {
