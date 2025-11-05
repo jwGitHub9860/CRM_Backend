@@ -117,44 +117,47 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 	// (CANNOT do anything about Initial Two New Lines when server starts)
 	fmt.Println("\n")
 
-	// Initial Customer Data
-	// Keys MUST BE STRINGS Because JSON does NOT SUPPORT "uint32" (Structs should Preferably be Strings)
-	c1 := `{"1": {"John Doe", "Buyer", "johndoe@gmail.com", "123-456-7890", true},}`
-	c2 := `{"2": {"Jane Doe", "Payer", "janedoe@gmail.com", "987-654-3210", false},}`
+	// Displays "customerMap" onto Terminal
+	for _, customer := range customerMap {
+		fmt.Println(customer)
+	}
 
-	// Returns JSON Back to User
+	// Returns "customerMap" as JSON Back to User in API Response
 	// 1. Set content type to JSON
 	w.Header().Set("Content-Type", "application/json")
 
 	// TESTING CODE
 	fmt.Println("PASSED Step 1")
 
-	// 2. Keep track of new entry
-	var newEntry map[uint32]Customer
+	// 2. Keep track of new entry -> Holds UNMARSHALED Data & MUST BE "map[string]string" or Entry will NOT UNMARSHAL CORRECTLY
+	var newEntry_test_3 map[string]string
 
 	// TESTING CODE
 	fmt.Println("PASSED Step 2")
 
-	// 3. Read the request
-	reqBody, _ := ioutil.ReadAll(r.Body)
+	// 3. Read the request -> Reads all Data from "reader"
+	reqBody, readRequestError := ioutil.ReadAll(r.Body)
+	if readRequestError != nil {
+		fmt.Print("Failed to Read Request")
+	}
 
 	// TESTING CODE
 	fmt.Println("PASSED Step 3")
 
 	// 4. Parse JSON body
-	json.Unmarshal(reqBody, &newEntry)
+	json.Unmarshal(reqBody, &newEntry_test_3)
 
 	// TESTING CODE
 	fmt.Println("PASSED Step 4")
 
-	// 5. Add new entry to dictionary
-	for k, v := range newEntry {
+	// 5. Add new entry to "customerMap"
+	for k, v := range newEntry_test_3 {
 		// Responds with conflict if entry exists
-		if _, ok := customerMap[k]; ok {
+		if _, ok := initial_customer_data[k]; ok {
 			w.WriteHeader(http.StatusConflict)
 		} else {
 			// Responds with OK if entry does not already exist
-			customerMap[k] = v
+			initial_customer_data[k] = v
 			w.WriteHeader(http.StatusCreated)
 		}
 	}
@@ -162,12 +165,9 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 	// TESTING CODE
 	fmt.Println("PASSED Step 5")
 
-	for _, customer := range customerMap {
-		fmt.Println(customer)
-	}
-
 	// 6. Returns "customerMap"
-	json.NewEncoder(w).Encode(customerMap)
+	//json.NewEncoder(w).Encode(customerMap)
+	json.NewEncoder(w).Encode(initial_customer_data)
 
 	// TESTING CODE
 	fmt.Println("PASSED Step 6")
