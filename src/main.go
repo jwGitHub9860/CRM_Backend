@@ -138,14 +138,8 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 	// 1. Set content type to JSON
 	w.Header().Set("Content-Type", "application/json")
 
-	// TESTING CODE
-	fmt.Println("PASSED Step 1")
-
 	// 2. Keep track of new entry -> Holds UNMARSHALED Data & MUST BE "map[string]string" or Entry will NOT UNMARSHAL CORRECTLY
 	var newEntry_test_3 map[string]string
-
-	// TESTING CODE
-	fmt.Println("PASSED Step 2")
 
 	// 3. Read the request -> Reads all Data from "reader"
 	reqBody, readRequestError := ioutil.ReadAll(r.Body)
@@ -153,14 +147,8 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 		fmt.Print("Failed to Read Request")
 	}
 
-	// TESTING CODE
-	fmt.Println("PASSED Step 3")
-
 	// 4. Parse JSON body
 	json.Unmarshal(reqBody, &newEntry_test_3)
-
-	// TESTING CODE
-	fmt.Println("PASSED Step 4")
 
 	// 5. Add new entry to "customerMap"
 	for k, v := range newEntry_test_3 {
@@ -174,15 +162,9 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	// TESTING CODE
-	fmt.Println("PASSED Step 5")
-
 	// 6. Returns "customerMap"
 	//json.NewEncoder(w).Encode(customerMap)
 	json.NewEncoder(w).Encode(initial_customer_data)
-
-	// TESTING CODE
-	fmt.Println("PASSED Step 6")
 }
 
 func getCustomer(w http.ResponseWriter, r *http.Request) {
