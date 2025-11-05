@@ -162,8 +162,7 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	// 6. Returns "customerMap"
-	//json.NewEncoder(w).Encode(customerMap)
+	// 6. Returns "customerMapForAPI"
 	json.NewEncoder(w).Encode(customerMapForAPI)
 }
 
