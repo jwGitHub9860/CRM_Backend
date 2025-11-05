@@ -30,6 +30,7 @@ var key uint32
 var customerMap = map[uint32]Customer{
 	1: {"John Doe", "Buyer", "johndoe@gmail.com", "123-456-7890", true},
 	2: {"Jane Doe", "Payer", "janedoe@gmail.com", "987-654-3210", false},
+	3: {"Jill Dole", "Payer", "jilldole@gmail.com", "012-345-6789", true},
 }
 
 var whatToInputStatements = []string{
