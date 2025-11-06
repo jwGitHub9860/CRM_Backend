@@ -122,19 +122,18 @@ func chooseCustomerInfo(addingNewCustomer bool) bool {
 	fmt.Println("AFTER key:", key)
 
 	// Adds or Updates Customer Info
-	if customerInfoStrings[4] == "true" {
-		customerMap[key] = Customer{customerInfoStrings[0], customerInfoStrings[1],
-			customerInfoStrings[2], customerInfoStrings[3],
-			true,
+	switch customerInfoStrings[4] {
+	case "true":
+		customerMap[key] = Customer{
+			customerInfoStrings[0], customerInfoStrings[1], customerInfoStrings[2], customerInfoStrings[3], true,
 		}
 		return true
-	} else if customerInfoStrings[4] == "false" {
-		customerMap[key] = Customer{customerInfoStrings[0], customerInfoStrings[1],
-			customerInfoStrings[2], customerInfoStrings[3],
-			false,
+	case "false":
+		customerMap[key] = Customer{
+			customerInfoStrings[0], customerInfoStrings[1], customerInfoStrings[2], customerInfoStrings[3], false,
 		}
 		return true
-	} else {
+	default:
 		fmt.Println("\nCustomer contacted must be either \"true\" or \"false\".")
 		return false
 	}
