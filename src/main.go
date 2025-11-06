@@ -80,9 +80,10 @@ func chooseCustomerInfo(addingNewCustomer bool) bool {
 		return false
 	}
 
-	// Defines "key" to allow "addCustomer()" function to Add New Customer to "customerMap"
+	// Defines "key" & "stringKey" to allow "addCustomer()" function to Add New Customer to "customerMap" & "customerMapForAPI"
 	if addingNewCustomer {
 		key = 3
+		stringKey = "3"
 	}
 
 	// Adds or Updates Customer Info
