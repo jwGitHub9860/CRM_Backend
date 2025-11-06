@@ -167,13 +167,6 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 }
 
 func getCustomer(w http.ResponseWriter, r *http.Request) {
-	// Encodes Customer as JSON
-	w.Header().Set("Content-Type", "application.json")
-	w.WriteHeader(http.StatusOK)
-	w.WriteHeader(http.StatusAccepted)
-
-	json.NewEncoder(w).Encode(customerMap)
-
 	// Checks if Customer Exists
 	customerExistence := doesCustomerExist(true, inputCustomerInfo(0))
 	if customerExistence != (Customer{}) {
@@ -182,6 +175,13 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 	} else {
 		w.WriteHeader(http.StatusConflict)
 	}
+
+	// Encodes Customer as JSON
+	w.Header().Set("Content-Type", "application.json")
+	w.WriteHeader(http.StatusOK)
+	w.WriteHeader(http.StatusAccepted)
+
+	json.NewEncoder(w).Encode(customerExistence)
 }
 
 func addCustomer(w http.ResponseWriter, r *http.Request) {
