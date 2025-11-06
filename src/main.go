@@ -26,6 +26,9 @@ type Customer struct {
 // Undefined because "key" will CONSTANTLY CHANGE
 var key uint32
 
+// Undefined because "stringKey" will CONSTANTLY CHANGE & Key for "customerMapForAPI" Map
+var stringKey string
+
 // Map for Terminal & Other Functions
 var customerMap = map[uint32]Customer{
 	1: {"John Doe", "Buyer", "johndoe@gmail.com", "123-456-7890", true},
