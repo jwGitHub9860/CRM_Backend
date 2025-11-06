@@ -81,14 +81,8 @@ func doesCustomerExist(customerNotFound bool, userInput string) Customer {
 
 			return customer
 		}
-		// TESTING CODE
-		fmt.Println("EXIST Before key:", key)
-
 		// Defines "key" for "addCustomer()" function When Adding New Customer to "customerMap"
 		key = mapKey
-
-		// TESTING CODE
-		fmt.Println("EXIST After key:", key)
 	}
 
 	// Displays if Customer was NOT FOUND
