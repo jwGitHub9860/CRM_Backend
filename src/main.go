@@ -66,6 +66,39 @@ func inputCustomerInfo(inputPrintStatementNumber int) string {
 	return strings.Trim(userInput, "\r\n")
 }
 
+func doesCustomerExist(customerNotFound bool, userInput string) Customer {
+	// Checks if "userInput" Exists
+	for mapKey, customer := range customerMap {
+		// MUST USE "strings.Compare(userInput, customer.name) == 0", Using "userInput == customer.name" Defines "userInput" & "customer.name" as NOT EQUAL EVEN THOUGH THEY ARE EQUAL
+		if strings.Compare(userInput, customer.name) == 0 {
+			customerNotFound = false
+
+			// TESTING CODE
+			fmt.Println("EXIST Before key:", key)
+
+			// Defines "key" for "delete()" command to Indicate Which Customer to Remove
+			key = mapKey
+
+			// TESTING CODE
+			fmt.Println("EXIST After key:", key)
+
+			// Defines "stringKey" for "getCustomer()" function to Indicate Which Customer Data to Display on API
+			stringKey = strconv.FormatUint(uint64(mapKey), 10)
+
+			return customer
+		}
+	}
+
+	// Displays if Customer was NOT FOUND
+	if customerNotFound {
+		// Returns NULL VALUE for "struct"
+		return Customer{}
+	}
+
+	// Fixes "missing return statement" Error
+	return Customer{}
+}
+
 func chooseCustomerInfo(addingNewCustomer bool) bool {
 	// Initializes Strings to EMPTY because Strings will CONSTANTLY CHANGE
 	customerInfoStrings := [5]string{}
@@ -109,39 +142,6 @@ func chooseCustomerInfo(addingNewCustomer bool) bool {
 		fmt.Println("\nCustomer contacted must be either \"true\" or \"false\".")
 		return false
 	}
-}
-
-func doesCustomerExist(customerNotFound bool, userInput string) Customer {
-	// Checks if "userInput" Exists
-	for mapKey, customer := range customerMap {
-		// MUST USE "strings.Compare(userInput, customer.name) == 0", Using "userInput == customer.name" Defines "userInput" & "customer.name" as NOT EQUAL EVEN THOUGH THEY ARE EQUAL
-		if strings.Compare(userInput, customer.name) == 0 {
-			customerNotFound = false
-
-			// TESTING CODE
-			fmt.Println("EXIST Before key:", key)
-
-			// Defines "key" for "delete()" command to Indicate Which Customer to Remove
-			key = mapKey
-
-			// TESTING CODE
-			fmt.Println("EXIST After key:", key)
-
-			// Defines "stringKey" for "getCustomer()" function to Indicate Which Customer Data to Display on API
-			stringKey = strconv.FormatUint(uint64(mapKey), 10)
-
-			return customer
-		}
-	}
-
-	// Displays if Customer was NOT FOUND
-	if customerNotFound {
-		// Returns NULL VALUE for "struct"
-		return Customer{}
-	}
-
-	// Fixes "missing return statement" Error
-	return Customer{}
 }
 
 func getAllCustomers(w http.ResponseWriter, r *http.Request) {
