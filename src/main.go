@@ -188,7 +188,7 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	w.WriteHeader(http.StatusAccepted)
 
-	json.NewEncoder(w).Encode(customerExistence)
+	json.NewEncoder(w).Encode(customerMapForAPI[stringKey])
 }
 
 func addCustomer(w http.ResponseWriter, r *http.Request) {
