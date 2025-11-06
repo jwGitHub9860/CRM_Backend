@@ -80,11 +80,17 @@ func chooseCustomerInfo(addingNewCustomer bool) bool {
 		return false
 	}
 
+	// TESTING CODE
+	fmt.Println("BEFORE key:", key)
+
 	// Defines "key" & "stringKey" to allow "addCustomer()" function to Add New Customer to "customerMap" & "customerMapForAPI"
 	if addingNewCustomer {
 		key += 1
 		stringKey = strconv.FormatUint(uint64(key), 10)
 	}
+
+	// TESTING CODE
+	fmt.Println("AFTER key:", key)
 
 	// Adds or Updates Customer Info
 	if customerInfoStrings[4] == "true" {
