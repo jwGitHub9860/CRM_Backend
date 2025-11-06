@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"encoding/json"
 	"fmt"
+	"strconv"
 
 	//"go/reader"
 	"io/ioutil"
@@ -112,6 +113,9 @@ func doesCustomerExist(customerNotFound bool, userInput string) Customer {
 
 			// Defines "key" for "delete()" command to Indicate Which Customer to Remove
 			key = mapKey
+
+			// Defines "stringKey" for "getCustomer()" function to Indicate Which Customer Data to Display on API
+			stringKey = strconv.FormatUint(uint64(mapKey), 10)
 
 			return customer
 		}
