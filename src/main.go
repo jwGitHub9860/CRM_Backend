@@ -73,20 +73,22 @@ func doesCustomerExist(customerNotFound bool, userInput string) Customer {
 		if strings.Compare(userInput, customer.name) == 0 {
 			customerNotFound = false
 
-			// TESTING CODE
-			fmt.Println("EXIST Before key:", key)
-
 			// Defines "key" for "delete()" command to Indicate Which Customer to Remove
 			key = mapKey
-
-			// TESTING CODE
-			fmt.Println("EXIST After key:", key)
 
 			// Defines "stringKey" for "getCustomer()" function to Indicate Which Customer Data to Display on API
 			stringKey = strconv.FormatUint(uint64(mapKey), 10)
 
 			return customer
 		}
+		// TESTING CODE
+		fmt.Println("EXIST Before key:", key)
+
+		// Defines "key" for "addCustomer()" function When Adding New Customer to "customerMap"
+		key = mapKey
+
+		// TESTING CODE
+		fmt.Println("EXIST After key:", key)
 	}
 
 	// Displays if Customer was NOT FOUND
