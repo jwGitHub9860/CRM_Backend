@@ -30,6 +30,9 @@ var key uint32
 // Undefined because "stringKey" will CONSTANTLY CHANGE & Key for "customerMapForAPI" Map
 var stringKey string
 
+// Undefined because "updateKey" will CONSTANTLY CHANGE & Key for Updating "customerMap" Map
+var updateKey uint32
+
 // Map for Terminal & Other Functions
 var customerMap = map[uint32]Customer{
 	1: {"John Doe", "Buyer", "johndoe@gmail.com", "123-456-7890", true},
@@ -72,12 +75,12 @@ func doesCustomerExist(customerNotFound bool, userInput string) Customer {
 		// Defines "key" for "delete()" command to Indicate Which Customer to Remove
 		key = mapKey
 
-		// Defines "key" for "addCustomer()" function When Adding New Customer to "customerMap"
-		key = mapKey
-
 		// MUST USE "strings.Compare(userInput, customer.name) == 0", Using "userInput == customer.name" Defines "userInput" & "customer.name" as NOT EQUAL EVEN THOUGH THEY ARE EQUAL
 		if strings.Compare(userInput, customer.name) == 0 {
 			customerNotFound = false
+
+			// Defines "updateKey" for "updateCustomer()" function When Adding New Customer to "customerMap"
+			updateKey = mapKey
 
 			// Defines "stringKey" for "getCustomer()" function to Indicate Which Customer Data to Display on API
 			stringKey = strconv.FormatUint(uint64(mapKey), 10)
@@ -116,8 +119,10 @@ func chooseCustomerInfo(addingNewCustomer bool) bool {
 	// Defines "key" & "stringKey" to allow "addCustomer()" function to Add New Customer to "customerMap" & "customerMapForAPI"
 	if addingNewCustomer {
 		key += 1
-		stringKey = strconv.FormatUint(uint64(key), 10)
+	} else {
+		key = updateKey
 	}
+	stringKey = strconv.FormatUint(uint64(key), 10)
 
 	// TESTING CODE
 	fmt.Println("AFTER key:", key)
