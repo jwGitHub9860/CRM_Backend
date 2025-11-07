@@ -19,11 +19,15 @@ Antolín-Camarena, Omar, and Jeremy Wall. “How to Use Arbitrary Length Sequenc
 
 asker152, et al. “Error Message ‘Go: Go.Mod File Not Found in Current Directory or Any Parent Directory; See “Go Help Modules.”’” Edited by DailyLearner and Peter Mortensen, _Stack Overflow_, 31 Mar. 2021, stackoverflow.com/questions/66894200/error-message-go-go-mod-file-not-found-in-current-directory-or-any-parent-dire. Accessed 28 Oct. 2025.
 
+B., Clive. “Concatenating Strings in Go.” _Sentry_, 15 Oct. 2024, sentry.io/answers/concatenating-strings-in-go/. Accessed 6 Nov. 2025.
+
 BenjB, et al. “How to Use a `switch` Statement in Go.” _Stack Overflow_, 21 Dec. 2021, stackoverflow.com/questions/70438741/how-to-use-a-switch-statement-in-go. Accessed 6 Nov. 2025.
 
 Biswas, Pradip, and fuglede. “Issues in Go with JSON Unmarshal of Map[String]Int64.” Edited by Fuglede, _Stack Overflow_, 9 Oct. 2019, stackoverflow.com/questions/58307298/issues-in-go-with-json-unmarshal-of-mapstringint64#:~:text=As%20you’ve%20noted%20yourself,18.3k3%2062%20107. Accessed 4 Nov. 2025.
 
 “Constants.” _Http Package - Net/Http - Go Packages_, pkg.go.dev/net/http#pkg-constants. Accessed 28 Oct. 2025.
+
+“Different Ways to Concatenate Two Strings in Golang.” _GeeksforGeeks_, GeeksforGeeks, 28 Oct. 2024, www.geeksforgeeks.org/go-language/different-ways-to-concatenate-two-strings-in-golang/#using-the-operator. Accessed 6 Nov. 2025.
 
 “Different Ways to Find the Type of Variable in Golang.” _GeeksforGeeks_, GeeksforGeeks, 12 July 2025, www.geeksforgeeks.org/go-language/different-ways-to-find-the-type-of-variable-in-golang/. Accessed 29 Oct. 2025.
 
@@ -74,3 +78,5 @@ Sanjeev. “Custom Golang HTTP Router.” _Medium_, Medium, 13 June 2021, sanjee
 Wada, Kengo. “Go Routing 101: Handling and Grouping Routes with Net/Http.” _DEV Community_, 2 Nov. 2024, dev.to/kengowada/go-routing-101-handling-and-grouping-routes-with-nethttp-4k0e. Accessed 28 Oct. 2025.
 
 Warmth, Vinyl, and BadZen. “Why Is My Go Lang String Comparison Not Working as Expected?” _Stack Overflow_, 5 Nov. 2016, stackoverflow.com/questions/40442971/why-is-my-go-lang-string-comparison-not-working-as-expected. Accessed 29 Oct. 2025.
+
+“Yuku,” Randy Sugianto, et al. “How to Efficiently Concatenate Strings in Go.” _Stack Overflow_, 15 Dec. 2015, stackoverflow.com/questions/1760757/how-to-efficiently-concatenate-strings-in-go. Accessed 6 Nov. 2025.
