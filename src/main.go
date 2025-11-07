@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"encoding/json"
 	"fmt"
+	"sort"
 	"strconv"
 
 	//"go/reader"
@@ -159,7 +160,12 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 	// (CANNOT do anything about Initial Two New Lines when server starts)
 	fmt.Println("\n")
 
-	// Displays "customerMap" onto Terminal
+	// Displays "customerMap" onto Terminal IN "key" ORDER
+	keys := make([]uint32, 0, len(customerMap))
+	for k := range customerMap {
+		keys = append(keys, k)
+	}
+	sort.Slice(keys, func(i, j int) bool { return keys[i] < keys[j] })
 	for _, customer := range customerMap {
 		fmt.Println(customer)
 	}
