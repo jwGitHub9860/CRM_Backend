@@ -127,11 +127,19 @@ func chooseCustomerInfo(addingNewCustomer bool) bool {
 		customerMap[key] = Customer{
 			customerInfoStrings[0], customerInfoStrings[1], customerInfoStrings[2], customerInfoStrings[3], true,
 		}
+
+		stringResult := customerInfoStrings[0] + " " + customerInfoStrings[1] + " " + customerInfoStrings[2] + " " + customerInfoStrings[3] + " " + "true"
+		customerMapForAPI[stringKey] = stringResult
+
 		return true
 	case "false":
 		customerMap[key] = Customer{
 			customerInfoStrings[0], customerInfoStrings[1], customerInfoStrings[2], customerInfoStrings[3], false,
 		}
+
+		stringResult := customerInfoStrings[0] + " " + customerInfoStrings[1] + " " + customerInfoStrings[2] + " " + customerInfoStrings[3] + " " + "false"
+		customerMapForAPI[stringKey] = stringResult
+
 		return true
 	default:
 		fmt.Println("\nCustomer contacted must be either \"true\" or \"false\".")
