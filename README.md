@@ -27,9 +27,13 @@ Biswas, Pradip, and fuglede. “Issues in Go with JSON Unmarshal of Map[String]I
 
 “Constants.” _Http Package - Net/Http - Go Packages_, pkg.go.dev/net/http#pkg-constants. Accessed 28 Oct. 2025.
 
+Dave, and Juan Carlos Garcia. “Sorting Unsigned Ints in Go.” _Stack Overflow_, 12 Jan. 2017, stackoverflow.com/questions/41624074/sorting-unsigned-ints-in-go. Accessed 7 Nov. 2025.
+
 “Different Ways to Concatenate Two Strings in Golang.” _GeeksforGeeks_, GeeksforGeeks, 28 Oct. 2024, www.geeksforgeeks.org/go-language/different-ways-to-concatenate-two-strings-in-golang/#using-the-operator. Accessed 6 Nov. 2025.
 
 “Different Ways to Find the Type of Variable in Golang.” _GeeksforGeeks_, GeeksforGeeks, 12 July 2025, www.geeksforgeeks.org/go-language/different-ways-to-find-the-type-of-variable-in-golang/. Accessed 29 Oct. 2025.
+
+“func Slice.” _Sort Package - Sort - Go Packages_, pkg.go.dev/sort@master#Slice. Accessed 7 Nov. 2025.
 
 “Go by Example: For.” _Go by Example: For_, gobyexample.com/for. Accessed 28 Oct. 2025.
 
