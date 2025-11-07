@@ -17,6 +17,7 @@ import (
 )
 
 type Customer struct {
+	ID        uint32
 	name      string
 	role      string
 	email     string
@@ -35,17 +36,17 @@ var updateKey uint32
 
 // Map for Terminal & Other Functions
 var customerMap = map[uint32]Customer{
-	1: {"John Doe", "Buyer", "johndoe@gmail.com", "123-456-7890", true},
-	2: {"Jane Doe", "Payer", "janedoe@gmail.com", "987-654-3210", false},
-	3: {"Jill Dole", "Payer", "jilldole@gmail.com", "012-345-6789", true},
+	1: {1, "John Doe", "Buyer", "johndoe@gmail.com", "123-456-7890", true},
+	2: {2, "Jane Doe", "Payer", "janedoe@gmail.com", "987-654-3210", false},
+	3: {3, "Jill Dole", "Payer", "jilldole@gmail.com", "012-345-6789", true},
 }
 
 // Keys & Values MUST BE STRINGS Because JSON does NOT SUPPORT "uint32" AND/OR "structs"
 // (Need to Make CUSTOM Unmarshal Function to Display "customerMap" onto API as JSON Response)
 var customerMapForAPI = map[string]string{
-	"1": "John Doe Buyer johndoe@gmail.com 123-456-7890 true",
-	"2": "Jane Doe Payer janedoe@gmail.com 987-654-3210 false",
-	"3": "Jill Dole Payer jilldole@gmail.com 012-345-6789 true",
+	"1": "1 John Doe Buyer johndoe@gmail.com 123-456-7890 true",
+	"2": "2 Jane Doe Payer janedoe@gmail.com 987-654-3210 false",
+	"3": "3 Jill Dole Payer jilldole@gmail.com 012-345-6789 true",
 }
 
 var whatToInputStatements = []string{
@@ -131,19 +132,19 @@ func chooseCustomerInfo(addingNewCustomer bool) bool {
 	switch customerInfoStrings[4] {
 	case "true":
 		customerMap[key] = Customer{
-			customerInfoStrings[0], customerInfoStrings[1], customerInfoStrings[2], customerInfoStrings[3], true,
+			key, customerInfoStrings[0], customerInfoStrings[1], customerInfoStrings[2], customerInfoStrings[3], true,
 		}
 
-		stringResult := customerInfoStrings[0] + " " + customerInfoStrings[1] + " " + customerInfoStrings[2] + " " + customerInfoStrings[3] + " " + "true"
+		stringResult := stringKey + " " + customerInfoStrings[0] + " " + customerInfoStrings[1] + " " + customerInfoStrings[2] + " " + customerInfoStrings[3] + " " + "true"
 		customerMapForAPI[stringKey] = stringResult
 
 		return true
 	case "false":
 		customerMap[key] = Customer{
-			customerInfoStrings[0], customerInfoStrings[1], customerInfoStrings[2], customerInfoStrings[3], false,
+			key, customerInfoStrings[0], customerInfoStrings[1], customerInfoStrings[2], customerInfoStrings[3], false,
 		}
 
-		stringResult := customerInfoStrings[0] + " " + customerInfoStrings[1] + " " + customerInfoStrings[2] + " " + customerInfoStrings[3] + " " + "false"
+		stringResult := stringKey + " " + customerInfoStrings[0] + " " + customerInfoStrings[1] + " " + customerInfoStrings[2] + " " + customerInfoStrings[3] + " " + "false"
 		customerMapForAPI[stringKey] = stringResult
 
 		return true
