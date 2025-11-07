@@ -19,6 +19,8 @@ Antolín-Camarena, Omar, and Jeremy Wall. “How to Use Arbitrary Length Sequenc
 
 asker152, et al. “Error Message ‘Go: Go.Mod File Not Found in Current Directory or Any Parent Directory; See “Go Help Modules.”’” Edited by DailyLearner and Peter Mortensen, _Stack Overflow_, 31 Mar. 2021, stackoverflow.com/questions/66894200/error-message-go-go-mod-file-not-found-in-current-directory-or-any-parent-dire. Accessed 28 Oct. 2025.
 
+BenjB, et al. “How to Use a `switch` Statement in Go.” _Stack Overflow_, 21 Dec. 2021, stackoverflow.com/questions/70438741/how-to-use-a-switch-statement-in-go. Accessed 6 Nov. 2025.
+
 Biswas, Pradip, and fuglede. “Issues in Go with JSON Unmarshal of Map[String]Int64.” Edited by Fuglede, _Stack Overflow_, 9 Oct. 2019, stackoverflow.com/questions/58307298/issues-in-go-with-json-unmarshal-of-mapstringint64#:~:text=As%20you’ve%20noted%20yourself,18.3k3%2062%20107. Accessed 4 Nov. 2025.
 
 “Constants.” _Http Package - Net/Http - Go Packages_, pkg.go.dev/net/http#pkg-constants. Accessed 28 Oct. 2025.
@@ -26,6 +28,8 @@ Biswas, Pradip, and fuglede. “Issues in Go with JSON Unmarshal of Map[String]I
 “Different Ways to Find the Type of Variable in Golang.” _GeeksforGeeks_, GeeksforGeeks, 12 July 2025, www.geeksforgeeks.org/go-language/different-ways-to-find-the-type-of-variable-in-golang/. Accessed 29 Oct. 2025.
 
 “Go by Example: For.” _Go by Example: For_, gobyexample.com/for. Accessed 28 Oct. 2025.
+
+“Go by Example: Switch.” _Go by Example: Switch_, gobyexample.com/switch. Accessed 6 Nov. 2025.
 
 Han, and Arin Yazilim. “Go Error: Go : Go.Mod File Not Found in Current Directory or Any Parent Directory; (Working on GOPATH/Src).” _Stack Overflow_, 1 Sept. 1965, stackoverflow.com/questions/67929883/go-error-go-go-mod-file-not-found-in-current-directory-or-any-parent-director/68508392#68508392. Accessed 28 Oct. 2025.
 
@@ -62,6 +66,10 @@ Rees, Lucas. “Working with Null Values in Go: A Complete Guide.” _Go/Golang 
 Sanjeev. “Custom Golang HTTP Router.” _Medium_, Medium, 13 June 2021, sanjeevsiva.medium.com/custom-golang-http-router-970a309531d7. Accessed 28 Oct. 2025.
 
 “Strconv.” _Strconv Package - Strconv - Go Packages_, pkg.go.dev/strconv. Accessed 3 Nov. 2025.
+
+“Switch.” _A Tour of Go_, go.dev/tour/flowcontrol/9. Accessed 6 Nov. 2025.
+
+“Switch Statement in Go.” _GeeksforGeeks_, GeeksforGeeks, 6 Nov. 2024, www.geeksforgeeks.org/go-language/switch-statement-in-go/. Accessed 6 Nov. 2025.
 
 Wada, Kengo. “Go Routing 101: Handling and Grouping Routes with Net/Http.” _DEV Community_, 2 Nov. 2024, dev.to/kengowada/go-routing-101-handling-and-grouping-routes-with-nethttp-4k0e. Accessed 28 Oct. 2025.
 
