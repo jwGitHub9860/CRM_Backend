@@ -67,6 +67,8 @@ r/golang, and phlatphrog. “How to Pass a Generic Map Parameter to Function.”
 
 Rees, Lucas. “Working with Null Values in Go: A Complete Guide.” _Go/Golang Programming and Scripting_, 2 Feb. 2021, golang.howtos.io/working-with-null-values-in-go-a-complete-guide/. Accessed 30 Oct. 2025.
 
+RoboTamer, and Ekkehard.Horner. “Golang Map Prints out of Order.” _Stack Overflow_, 24 Aug. 2012, stackoverflow.com/questions/12108215/golang-map-prints-out-of-order. Accessed 6 Nov. 2025.
+
 Sanjeev. “Custom Golang HTTP Router.” _Medium_, Medium, 13 June 2021, sanjeevsiva.medium.com/custom-golang-http-router-970a309531d7. Accessed 28 Oct. 2025.
 
 “Strconv.” _Strconv Package - Strconv - Go Packages_, pkg.go.dev/strconv. Accessed 3 Nov. 2025.
