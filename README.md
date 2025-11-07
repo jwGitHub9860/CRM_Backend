@@ -45,6 +45,8 @@ hey, and julienc. “How to Convert Uint32 to String?” Edited by Nik and Fuz, 
 
 hhh, et al. “Simple Way of Getting Key Depending on Value from Hashmap in Golang.” Edited by User142162, _Stack Overflow_, 14 Nov. 2015, stackoverflow.com/questions/33701828/simple-way-of-getting-key-depending-on-value-from-hashmap-in-golang. Accessed 30 Oct. 2025.
 
+“How to Sort Golang Map By Keys or Values?” _GeeksforGeeks_, GeeksforGeeks, 4 Apr. 2024, www.geeksforgeeks.org/go-language/how-to-sort-golang-map-by-keys-or-values/. Accessed 7 Nov. 2025.
+
 “How to Take Input from the User in Golang?” _GeeksforGeeks_, GeeksforGeeks, 10 May 2020, www.geeksforgeeks.org/go-language/how-to-take-input-from-the-user-in-golang/. Accessed 28 Oct. 2025.
 
 Ihab, Naguib, et al. “Return Nil for a Struct in Go.” Edited by Jonathan Hall, _Stack Overflow_, 5 June 2018, stackoverflow.com/questions/50697914/return-nil-for-a-struct-in-go. Accessed 30 Oct. 2025.
