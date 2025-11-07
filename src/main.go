@@ -69,20 +69,21 @@ func inputCustomerInfo(inputPrintStatementNumber int) string {
 func doesCustomerExist(customerNotFound bool, userInput string) Customer {
 	// Checks if "userInput" Exists
 	for mapKey, customer := range customerMap {
+		// Defines "key" for "delete()" command to Indicate Which Customer to Remove
+		key = mapKey
+
+		// Defines "key" for "addCustomer()" function When Adding New Customer to "customerMap"
+		key = mapKey
+
 		// MUST USE "strings.Compare(userInput, customer.name) == 0", Using "userInput == customer.name" Defines "userInput" & "customer.name" as NOT EQUAL EVEN THOUGH THEY ARE EQUAL
 		if strings.Compare(userInput, customer.name) == 0 {
 			customerNotFound = false
-
-			// Defines "key" for "delete()" command to Indicate Which Customer to Remove
-			key = mapKey
 
 			// Defines "stringKey" for "getCustomer()" function to Indicate Which Customer Data to Display on API
 			stringKey = strconv.FormatUint(uint64(mapKey), 10)
 
 			return customer
 		}
-		// Defines "key" for "addCustomer()" function When Adding New Customer to "customerMap"
-		key = mapKey
 	}
 
 	// Displays if Customer was NOT FOUND
