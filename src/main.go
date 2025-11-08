@@ -29,7 +29,7 @@ type Customer struct {
 // Undefined because "key" will CONSTANTLY CHANGE
 var key uint32
 
-// Undefined because "stringKey" will CONSTANTLY CHANGE & Key for "customerMaps" Map
+// Undefined because "stringKey" will CONSTANTLY CHANGE & Key for "customerMapsForAPI" Map
 var stringKey string
 
 // Undefined because "updateKey" will CONSTANTLY CHANGE & Key for Updating "customerMap" Map
@@ -53,7 +53,7 @@ var customerMap = map[uint32]Customer{
 
 // Keys & Values MUST BE STRINGS Because JSON does NOT SUPPORT "uint32" AND/OR "structs"
 // (Need to Make CUSTOM Unmarshal Function to Display "customerMap" onto API as JSON Response)
-var customerMaps = map[string]map[string]string{
+var customerMapsForAPI = map[string]map[string]string{
 	"Customer 1": {
 		"ID":        "1",
 		"Name":      "John Doe",
@@ -136,7 +136,7 @@ func chooseCustomerInfo(addingNewCustomer bool) bool {
 		return false
 	}
 
-	// Defines "key" & "stringKey" to allow "addCustomer()" function to Add New Customer to "customerMap" & "customerMaps"
+	// Defines "key" & "stringKey" to allow "addCustomer()" function to Add New Customer to "customerMap" & "customerMapsForAPI"
 	if addingNewCustomer {
 		key += 1
 	} else {
@@ -152,7 +152,7 @@ func chooseCustomerInfo(addingNewCustomer bool) bool {
 		}
 
 		stringResult := stringKey + " " + customerInfoStrings[0] + " " + customerInfoStrings[1] + " " + customerInfoStrings[2] + " " + customerInfoStrings[3] + " " + "true"
-		customerMaps[stringKey] = stringResult
+		customerMapsForAPI[stringKey] = stringResult
 
 		return true
 	case "false":
@@ -161,7 +161,7 @@ func chooseCustomerInfo(addingNewCustomer bool) bool {
 		}
 
 		stringResult := stringKey + " " + customerInfoStrings[0] + " " + customerInfoStrings[1] + " " + customerInfoStrings[2] + " " + customerInfoStrings[3] + " " + "false"
-		customerMaps[stringKey] = stringResult
+		customerMapsForAPI[stringKey] = stringResult
 
 		return true
 	default:
@@ -189,7 +189,7 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 		fmt.Println(data.ID, data.name, data.role, data.email, data.phone, data.contacted)
 	}
 
-	// Returns "customerMaps" as JSON Back to User in API Response
+	// Returns "customerMapsForAPI" as JSON Back to User in API Response
 	// 1. Set content type to JSON
 	w.Header().Set("Content-Type", "application/json")
 
@@ -205,8 +205,8 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 	// 4. Parse JSON body
 	json.Unmarshal(reqBody, &newEntry_test_3)
 
-	// 5. Add new entry to "customerMaps"
-	for _, customerData := range customerMaps {
+	// 5. Add new entry to "customerMapsForAPI"
+	for _, customerData := range customerMapsForAPI {
 		for k, v := range newEntry_test_3 {
 			// Responds with conflict if entry exists
 			if _, ok := customerData[k]; ok {
@@ -219,8 +219,8 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	// 6. Returns "customerMaps"
-	json.NewEncoder(w).Encode(customerMaps)
+	// 6. Returns "customerMapsForAPI"
+	json.NewEncoder(w).Encode(customerMapsForAPI)
 }
 
 func getCustomer(w http.ResponseWriter, r *http.Request) {
@@ -238,7 +238,7 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	w.WriteHeader(http.StatusAccepted)
 
-	json.NewEncoder(w).Encode(customerMaps[stringKey])
+	json.NewEncoder(w).Encode(customerMapsForAPI[stringKey])
 }
 
 func addCustomer(w http.ResponseWriter, r *http.Request) {
@@ -268,7 +268,7 @@ func removeCustomer(w http.ResponseWriter, r *http.Request) {
 	// "inputCustomerInfo(0)" -> Saves Customer Name that User Chose & Checks if Customer Exists
 	if doesCustomerExist(true, inputCustomerInfo(0)) != (Customer{}) {
 		delete(customerMap, key)
-		delete(customerMaps, stringKey)
+		delete(customerMapsForAPI, stringKey)
 
 		// Organizes Terminal Output by Preventing "print statement" & Result of Postman request from Being On the Same Line
 		fmt.Println("\n")
