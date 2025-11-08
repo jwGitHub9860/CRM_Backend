@@ -35,6 +35,15 @@ var stringKey string
 // Undefined because "updateKey" will CONSTANTLY CHANGE & Key for Updating "customerMap" Map
 var updateKey uint32
 
+var whatToInputStatements = []string{
+	"Enter Customer Name: ",
+	"Enter Customer Role: ",
+	"Enter Customer Email: ",
+	"Enter Customer Phone: ",
+	"Enter Customer contacted: ",
+	"Choose Customer to Update (via customer name): ",
+}
+
 // Map for Terminal & Other Functions
 var customerMap = map[uint32]Customer{
 	1: {1, "John Doe", "Buyer", "johndoe@gmail.com", "123-456-7890", true},
@@ -44,6 +53,7 @@ var customerMap = map[uint32]Customer{
 
 // Keys & Values MUST BE STRINGS Because JSON does NOT SUPPORT "uint32" AND/OR "structs"
 // (Need to Make CUSTOM Unmarshal Function to Display "customerMap" onto API as JSON Response)
+
 var firstCustomerMapForAPI = map[string]string{
 	"ID":        "1",
 	"Name":      "John Doe",
@@ -69,15 +79,6 @@ var thirdCustomerMapForAPI = map[string]string{
 	"Email":     "jilldole@gmail.com",
 	"Phone":     "012-345-6789",
 	"Contacted": "true",
-}
-
-var whatToInputStatements = []string{
-	"Enter Customer Name: ",
-	"Enter Customer Role: ",
-	"Enter Customer Email: ",
-	"Enter Customer Phone: ",
-	"Enter Customer contacted: ",
-	"Choose Customer to Update (via customer name): ",
 }
 
 func inputCustomerInfo(inputPrintStatementNumber int) string {
