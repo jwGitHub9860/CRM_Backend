@@ -151,8 +151,15 @@ func chooseCustomerInfo(addingNewCustomer bool) bool {
 			key, customerInfoStrings[0], customerInfoStrings[1], customerInfoStrings[2], customerInfoStrings[3], true,
 		}
 
-		stringResult := stringKey + " " + customerInfoStrings[0] + " " + customerInfoStrings[1] + " " + customerInfoStrings[2] + " " + customerInfoStrings[3] + " " + "true"
-		customerMapsForAPI[stringKey] = stringResult
+		customerInput := map[string]string{
+			"ID":        stringKey,
+			"Name":      customerInfoStrings[0],
+			"Role":      customerInfoStrings[1],
+			"Email":     customerInfoStrings[2],
+			"Phone":     customerInfoStrings[3],
+			"Contacted": "true",
+		}
+		customerMapsForAPI[stringKey] = customerInput
 
 		return true
 	case "false":
@@ -160,8 +167,15 @@ func chooseCustomerInfo(addingNewCustomer bool) bool {
 			key, customerInfoStrings[0], customerInfoStrings[1], customerInfoStrings[2], customerInfoStrings[3], false,
 		}
 
-		stringResult := stringKey + " " + customerInfoStrings[0] + " " + customerInfoStrings[1] + " " + customerInfoStrings[2] + " " + customerInfoStrings[3] + " " + "false"
-		customerMapsForAPI[stringKey] = stringResult
+		customerInput := map[string]string{
+			"ID":        stringKey,
+			"Name":      customerInfoStrings[0],
+			"Role":      customerInfoStrings[1],
+			"Email":     customerInfoStrings[2],
+			"Phone":     customerInfoStrings[3],
+			"Contacted": "false",
+		}
+		customerMapsForAPI[stringKey] = customerInput
 
 		return true
 	default:
