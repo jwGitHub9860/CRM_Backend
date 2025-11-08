@@ -200,7 +200,12 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 	// 3. Print Sorted Slice of "customerMap" ("sortedMap")
 	for _, data := range sortedMap {
 		// MUST LIST EVERY "data" Struct Type SPECIFICALLY to Display Customer in "customerMap"
-		fmt.Println(data.ID, data.name, data.role, data.email, data.phone, data.contacted)
+		fmt.Println("ID:", data.ID)
+		fmt.Println("Name:", data.name)
+		fmt.Println("Role:", data.role)
+		fmt.Println("Email:", data.email)
+		fmt.Println("Phone:", data.phone)
+		fmt.Println("Contacted:", data.contacted, "\n")
 	}
 
 	// Returns "customerMapsForAPI" as JSON Back to User in API Response
