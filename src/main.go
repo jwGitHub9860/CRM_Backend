@@ -189,7 +189,7 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 		fmt.Println(data.ID, data.name, data.role, data.email, data.phone, data.contacted)
 	}
 
-	// Returns "customerMapForAPI" as JSON Back to User in API Response
+	// Returns "firstCustomerMapForAPI" as JSON Back to User in API Response
 	// 1. Set content type to JSON
 	w.Header().Set("Content-Type", "application/json")
 
@@ -205,20 +205,20 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 	// 4. Parse JSON body
 	json.Unmarshal(reqBody, &newEntry_test_3)
 
-	// 5. Add new entry to "customerMapForAPI"
+	// 5. Add new entry to "firstCustomerMapForAPI"
 	for k, v := range newEntry_test_3 {
 		// Responds with conflict if entry exists
-		if _, ok := customerMapForAPI[k]; ok {
+		if _, ok := firstCustomerMapForAPI[k]; ok {
 			w.WriteHeader(http.StatusConflict)
 		} else {
 			// Responds with OK if entry does not already exist
-			customerMapForAPI[k] = v
+			firstCustomerMapForAPI[k] = v
 			w.WriteHeader(http.StatusCreated)
 		}
 	}
 
-	// 6. Returns "customerMapForAPI"
-	json.NewEncoder(w).Encode(customerMapForAPI)
+	// 6. Returns "firstCustomerMapForAPI"
+	json.NewEncoder(w).Encode(firstCustomerMapForAPI)
 }
 
 func getCustomer(w http.ResponseWriter, r *http.Request) {
