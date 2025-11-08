@@ -206,14 +206,16 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 	json.Unmarshal(reqBody, &newEntry_test_3)
 
 	// 5. Add new entry to "customerMaps"
-	for k, v := range newEntry_test_3 {
-		// Responds with conflict if entry exists
-		if _, ok := customerMaps[k]; ok {
-			w.WriteHeader(http.StatusConflict)
-		} else {
-			// Responds with OK if entry does not already exist
-			customerMaps[k] = v
-			w.WriteHeader(http.StatusCreated)
+	for _, customerData := range customerMaps {
+		for k, v := range newEntry_test_3 {
+			// Responds with conflict if entry exists
+			if _, ok := customerData[k]; ok {
+				w.WriteHeader(http.StatusConflict)
+			} else {
+				// Responds with OK if entry does not already exist
+				customerData[k] = v
+				w.WriteHeader(http.StatusCreated)
+			}
 		}
 	}
 
