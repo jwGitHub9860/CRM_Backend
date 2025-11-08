@@ -29,6 +29,8 @@ Biswas, Pradip, and fuglede. “Issues in Go with JSON Unmarshal of Map[String]I
 
 Dave, and Juan Carlos Garcia. “Sorting Unsigned Ints in Go.” _Stack Overflow_, 12 Jan. 2017, stackoverflow.com/questions/41624074/sorting-unsigned-ints-in-go. Accessed 7 Nov. 2025.
 
+Demir, David. “What Are HTTP Methods (GET, POST, PUT, DELETE).” _Apidog_, 31 July 2025, apidog.com/blog/http-methods/. Accessed 8 Nov. 2025.
+
 “Different Ways to Concatenate Two Strings in Golang.” _GeeksforGeeks_, GeeksforGeeks, 28 Oct. 2024, www.geeksforgeeks.org/go-language/different-ways-to-concatenate-two-strings-in-golang/#using-the-operator. Accessed 6 Nov. 2025.
 
 “Different Ways to Find the Type of Variable in Golang.” _GeeksforGeeks_, GeeksforGeeks, 12 July 2025, www.geeksforgeeks.org/go-language/different-ways-to-find-the-type-of-variable-in-golang/. Accessed 29 Oct. 2025.
