@@ -29,7 +29,7 @@ type Customer struct {
 // Undefined because "key" will CONSTANTLY CHANGE
 var key uint32
 
-// Undefined because "stringKey" will CONSTANTLY CHANGE & Key for "customerMapForAPI" Map
+// Undefined because "stringKey" will CONSTANTLY CHANGE & Key for "customerMaps" Map
 var stringKey string
 
 // Undefined because "updateKey" will CONSTANTLY CHANGE & Key for Updating "customerMap" Map
@@ -136,7 +136,7 @@ func chooseCustomerInfo(addingNewCustomer bool) bool {
 		return false
 	}
 
-	// Defines "key" & "stringKey" to allow "addCustomer()" function to Add New Customer to "customerMap" & "customerMapForAPI"
+	// Defines "key" & "stringKey" to allow "addCustomer()" function to Add New Customer to "customerMap" & "customerMaps"
 	if addingNewCustomer {
 		key += 1
 	} else {
@@ -152,7 +152,7 @@ func chooseCustomerInfo(addingNewCustomer bool) bool {
 		}
 
 		stringResult := stringKey + " " + customerInfoStrings[0] + " " + customerInfoStrings[1] + " " + customerInfoStrings[2] + " " + customerInfoStrings[3] + " " + "true"
-		customerMapForAPI[stringKey] = stringResult
+		customerMaps[stringKey] = stringResult
 
 		return true
 	case "false":
@@ -161,7 +161,7 @@ func chooseCustomerInfo(addingNewCustomer bool) bool {
 		}
 
 		stringResult := stringKey + " " + customerInfoStrings[0] + " " + customerInfoStrings[1] + " " + customerInfoStrings[2] + " " + customerInfoStrings[3] + " " + "false"
-		customerMapForAPI[stringKey] = stringResult
+		customerMaps[stringKey] = stringResult
 
 		return true
 	default:
@@ -238,7 +238,7 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	w.WriteHeader(http.StatusAccepted)
 
-	json.NewEncoder(w).Encode(customerMapForAPI[stringKey])
+	json.NewEncoder(w).Encode(customerMaps[stringKey])
 }
 
 func addCustomer(w http.ResponseWriter, r *http.Request) {
