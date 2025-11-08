@@ -29,6 +29,8 @@ Biswas, Pradip, and fuglede. “Issues in Go with JSON Unmarshal of Map[String]I
 
 Dave, and Juan Carlos Garcia. “Sorting Unsigned Ints in Go.” _Stack Overflow_, 12 Jan. 2017, stackoverflow.com/questions/41624074/sorting-unsigned-ints-in-go. Accessed 7 Nov. 2025.
 
+“Delete Elements in a Slice in Golang.” _GeeksforGeeks_, GeeksforGeeks, 23 July 2025, www.geeksforgeeks.org/go-language/delete-elements-in-a-slice-in-golang/. Accessed 8 Nov. 2025.
+
 Demir, David. “What Are HTTP Methods (GET, POST, PUT, DELETE).” _Apidog_, 31 July 2025, apidog.com/blog/http-methods/. Accessed 8 Nov. 2025.
 
 “Different Ways to Concatenate Two Strings in Golang.” _GeeksforGeeks_, GeeksforGeeks, 28 Oct. 2024, www.geeksforgeeks.org/go-language/different-ways-to-concatenate-two-strings-in-golang/#using-the-operator. Accessed 6 Nov. 2025.
@@ -61,6 +63,8 @@ Kelche, Kevin. “How to Accept User Input with Spaces in Golang.” _Kelche_, 2
 
 Kfir, and mbuechmann. “Use different structs as a value in map golang.” _Stack Overflow_, 8 Nov. 2018, stackoverflow.com/questions/53204138/use-different-structs-as-a-value-in-map-golang. Accessed 27 Oct. 2025.
 
+Koharim67, and Ezequiel Muns. “Find an Item in Array of Maps and Delete It.” _Stack Overflow_, 26 Oct. 2021, stackoverflow.com/questions/69722669/find-an-item-in-array-of-maps-and-delete-it. Accessed 8 Nov. 2025.
+
 “MLA Works Cited: Electronic Sources (Web Publications).” _MLA Works Cited: Electronic Sources - Purdue OWL® - Purdue University_, owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_works_cited_electronic_sources.html. Accessed 26 Oct 2025.
 
 Naresh, and peterSO. “Convert String to Uint in Go Lang.” Edited by Danack, _Stack Overflow_, 2 Feb. 2016, stackoverflow.com/questions/35154875/convert-string-to-uint-in-go-lang. Accessed 3 Nov. 2025.
@@ -80,6 +84,8 @@ Rees, Lucas. “Working with Null Values in Go: A Complete Guide.” _Go/Golang 
 RoboTamer, and Ekkehard.Horner. “Golang Map Prints out of Order.” _Stack Overflow_, 24 Aug. 2012, stackoverflow.com/questions/12108215/golang-map-prints-out-of-order. Accessed 6 Nov. 2025.
 
 Sanjeev. “Custom Golang HTTP Router.” _Medium_, Medium, 13 June 2021, sanjeevsiva.medium.com/custom-golang-http-router-970a309531d7. Accessed 28 Oct. 2025.
+
+Sarraf, Anchal, and T. Claverie. “How to Delete an Element from a Slice in Golang.” Edited by Carson and Community, _Stack Overflow_, 19 May 2016, stackoverflow.com/questions/37334119/how-to-delete-an-element-from-a-slice-in-golang. Accessed 8 Nov. 2025.
 
 serpent7655, and uhhd. “R/Golang on Reddit: Anyone Knows How Can Go Sort Struct by Multiple Fields?” _Reddit_, 2024, www.reddit.com/r/golang/comments/1fnyydy/anyone_knows_how_can_go_sort_struct_by_multiple/. Accessed 7 Nov. 2025.
 
