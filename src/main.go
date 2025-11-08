@@ -29,11 +29,20 @@ type Customer struct {
 // Undefined because "key" will CONSTANTLY CHANGE
 var key uint32
 
-// Undefined because "stringKey" will CONSTANTLY CHANGE & Key for "customerMapForAPI" Map
+// Undefined because "stringKey" will CONSTANTLY CHANGE & Key for "customerMapsForAPI" Map
 var stringKey string
 
 // Undefined because "updateKey" will CONSTANTLY CHANGE & Key for Updating "customerMap" Map
 var updateKey uint32
+
+var whatToInputStatements = []string{
+	"Enter Customer Name: ",
+	"Enter Customer Role: ",
+	"Enter Customer Email: ",
+	"Enter Customer Phone: ",
+	"Enter Customer contacted: ",
+	"Choose Customer to Update (via customer name): ",
+}
 
 // Map for Terminal & Other Functions
 var customerMap = map[uint32]Customer{
@@ -44,19 +53,31 @@ var customerMap = map[uint32]Customer{
 
 // Keys & Values MUST BE STRINGS Because JSON does NOT SUPPORT "uint32" AND/OR "structs"
 // (Need to Make CUSTOM Unmarshal Function to Display "customerMap" onto API as JSON Response)
-var customerMapForAPI = map[string]string{
-	"1": "1 John Doe Buyer johndoe@gmail.com 123-456-7890 true",
-	"2": "2 Jane Doe Payer janedoe@gmail.com 987-654-3210 false",
-	"3": "3 Jill Dole Payer jilldole@gmail.com 012-345-6789 true",
-}
-
-var whatToInputStatements = []string{
-	"Enter Customer Name: ",
-	"Enter Customer Role: ",
-	"Enter Customer Email: ",
-	"Enter Customer Phone: ",
-	"Enter Customer contacted: ",
-	"Choose Customer to Update (via customer name): ",
+var customerMapsForAPI = []map[string]string{
+	{
+		"ID":        "1",
+		"Name":      "John Doe",
+		"Role":      "Buyer",
+		"Email":     "johndoe@gmail.com",
+		"Phone":     "123-456-7890",
+		"Contacted": "true",
+	},
+	{
+		"ID":        "2",
+		"Name":      "Jane Doe",
+		"Role":      "Payer",
+		"Email":     "janedoe@gmail.com",
+		"Phone":     "987-654-3210",
+		"Contacted": "false",
+	},
+	{
+		"ID":        "3",
+		"Name":      "Jill Dole",
+		"Role":      "Payer",
+		"Email":     "jilldole@gmail.com",
+		"Phone":     "012-345-6789",
+		"Contacted": "true",
+	},
 }
 
 func inputCustomerInfo(inputPrintStatementNumber int) string {
@@ -115,19 +136,13 @@ func chooseCustomerInfo(addingNewCustomer bool) bool {
 		return false
 	}
 
-	// TESTING CODE
-	fmt.Println("BEFORE key:", key)
-
-	// Defines "key" & "stringKey" to allow "addCustomer()" function to Add New Customer to "customerMap" & "customerMapForAPI"
+	// Defines "key" & "stringKey" to allow "addCustomer()" function to Add New Customer to "customerMap" & "customerMapsForAPI"
 	if addingNewCustomer {
 		key += 1
 	} else {
 		key = updateKey
 	}
 	stringKey = strconv.FormatUint(uint64(key), 10)
-
-	// TESTING CODE
-	fmt.Println("AFTER key:", key)
 
 	// Adds or Updates Customer Info
 	switch customerInfoStrings[4] {
@@ -136,8 +151,15 @@ func chooseCustomerInfo(addingNewCustomer bool) bool {
 			key, customerInfoStrings[0], customerInfoStrings[1], customerInfoStrings[2], customerInfoStrings[3], true,
 		}
 
-		stringResult := stringKey + " " + customerInfoStrings[0] + " " + customerInfoStrings[1] + " " + customerInfoStrings[2] + " " + customerInfoStrings[3] + " " + "true"
-		customerMapForAPI[stringKey] = stringResult
+		customerInput := map[string]string{
+			"ID":        stringKey,
+			"Name":      customerInfoStrings[0],
+			"Role":      customerInfoStrings[1],
+			"Email":     customerInfoStrings[2],
+			"Phone":     customerInfoStrings[3],
+			"Contacted": "true",
+		}
+		customerMapsForAPI[key] = customerInput
 
 		return true
 	case "false":
@@ -145,8 +167,15 @@ func chooseCustomerInfo(addingNewCustomer bool) bool {
 			key, customerInfoStrings[0], customerInfoStrings[1], customerInfoStrings[2], customerInfoStrings[3], false,
 		}
 
-		stringResult := stringKey + " " + customerInfoStrings[0] + " " + customerInfoStrings[1] + " " + customerInfoStrings[2] + " " + customerInfoStrings[3] + " " + "false"
-		customerMapForAPI[stringKey] = stringResult
+		customerInput := map[string]string{
+			"ID":        stringKey,
+			"Name":      customerInfoStrings[0],
+			"Role":      customerInfoStrings[1],
+			"Email":     customerInfoStrings[2],
+			"Phone":     customerInfoStrings[3],
+			"Contacted": "false",
+		}
+		customerMapsForAPI[key] = customerInput
 
 		return true
 	default:
@@ -174,7 +203,7 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 		fmt.Println(data.ID, data.name, data.role, data.email, data.phone, data.contacted)
 	}
 
-	// Returns "customerMapForAPI" as JSON Back to User in API Response
+	// Returns "customerMapsForAPI" as JSON Back to User in API Response
 	// 1. Set content type to JSON
 	w.Header().Set("Content-Type", "application/json")
 
@@ -190,20 +219,22 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 	// 4. Parse JSON body
 	json.Unmarshal(reqBody, &newEntry_test_3)
 
-	// 5. Add new entry to "customerMapForAPI"
-	for k, v := range newEntry_test_3 {
-		// Responds with conflict if entry exists
-		if _, ok := customerMapForAPI[k]; ok {
-			w.WriteHeader(http.StatusConflict)
-		} else {
-			// Responds with OK if entry does not already exist
-			customerMapForAPI[k] = v
-			w.WriteHeader(http.StatusCreated)
+	// 5. Add new entry to "customerMapsForAPI"
+	for _, customerData := range customerMapsForAPI {
+		for k, v := range newEntry_test_3 {
+			// Responds with conflict if entry exists
+			if _, ok := customerData[k]; ok {
+				w.WriteHeader(http.StatusConflict)
+			} else {
+				// Responds with OK if entry does not already exist
+				customerData[k] = v
+				w.WriteHeader(http.StatusCreated)
+			}
 		}
 	}
 
-	// 6. Returns "customerMapForAPI"
-	json.NewEncoder(w).Encode(customerMapForAPI)
+	// 6. Returns "customerMapsForAPI"
+	json.NewEncoder(w).Encode(customerMapsForAPI)
 }
 
 func getCustomer(w http.ResponseWriter, r *http.Request) {
@@ -221,7 +252,7 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	w.WriteHeader(http.StatusAccepted)
 
-	json.NewEncoder(w).Encode(customerMapForAPI[stringKey])
+	json.NewEncoder(w).Encode(customerMapsForAPI[key])
 }
 
 func addCustomer(w http.ResponseWriter, r *http.Request) {
@@ -251,7 +282,7 @@ func removeCustomer(w http.ResponseWriter, r *http.Request) {
 	// "inputCustomerInfo(0)" -> Saves Customer Name that User Chose & Checks if Customer Exists
 	if doesCustomerExist(true, inputCustomerInfo(0)) != (Customer{}) {
 		delete(customerMap, key)
-		delete(customerMapForAPI, stringKey)
+		customerMapsForAPI = append(customerMapsForAPI[:key], customerMapsForAPI[key+1:]...)
 
 		// Organizes Terminal Output by Preventing "print statement" & Result of Postman request from Being On the Same Line
 		fmt.Println("\n")
