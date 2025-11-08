@@ -160,14 +160,18 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 	// (CANNOT do anything about Initial Two New Lines when server starts)
 	fmt.Println("\n")
 
-	// Displays "customerMap" onto Terminal IN "key" ORDER
-	keys := make([]uint32, 0, len(customerMap))
-	for k := range customerMap {
-		keys = append(keys, k)
+	// Displays "customerMap" onto Terminal IN "ID" ORDER
+	// 1. Create Slice of Structs to Hold "customerMap" Values
+	var sortedMap []Customer
+	for _, v := range customerMap {
+		sortedMap = append(sortedMap, v)
 	}
-	sort.Slice(keys, func(i, j int) bool { return keys[i] < keys[j] })
-	for _, k := range keys {
-		fmt.Printf("%2d: %s\n", k, keys[k])
+	// 2. Sort Slice
+	sort.Slice(sortedMap, func(i, j int) bool { return sortedMap[i].ID < sortedMap[j].ID })
+	// 3. Print Sorted Slice of "customerMap" ("sortedMap")
+	for _, data := range sortedMap {
+		// MUST LIST EVERY "data" Struct Type SPECIFICALLY to Display Customer in "customerMap"
+		fmt.Println(data.ID, data.name, data.role, data.email, data.phone, data.contacted)
 	}
 
 	// Returns "customerMapForAPI" as JSON Back to User in API Response
