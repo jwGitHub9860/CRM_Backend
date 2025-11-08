@@ -53,32 +53,31 @@ var customerMap = map[uint32]Customer{
 
 // Keys & Values MUST BE STRINGS Because JSON does NOT SUPPORT "uint32" AND/OR "structs"
 // (Need to Make CUSTOM Unmarshal Function to Display "customerMap" onto API as JSON Response)
-
-var firstCustomerMapForAPI = map[string]string{
-	"ID":        "1",
-	"Name":      "John Doe",
-	"Role":      "Buyer",
-	"Email":     "johndoe@gmail.com",
-	"Phone":     "123-456-7890",
-	"Contacted": "true",
-}
-
-var secondCustomerMapForAPI = map[string]string{
-	"ID":        "2",
-	"Name":      "Jane Doe",
-	"Role":      "Payer",
-	"Email":     "janedoe@gmail.com",
-	"Phone":     "987-654-3210",
-	"Contacted": "false",
-}
-
-var thirdCustomerMapForAPI = map[string]string{
-	"ID":        "3",
-	"Name":      "Jill Dole",
-	"Role":      "Payer",
-	"Email":     "jilldole@gmail.com",
-	"Phone":     "012-345-6789",
-	"Contacted": "true",
+var customerMaps = []map[string]string{
+	{
+		"ID":        "1",
+		"Name":      "John Doe",
+		"Role":      "Buyer",
+		"Email":     "johndoe@gmail.com",
+		"Phone":     "123-456-7890",
+		"Contacted": "true",
+	},
+	{
+		"ID":        "2",
+		"Name":      "Jane Doe",
+		"Role":      "Payer",
+		"Email":     "janedoe@gmail.com",
+		"Phone":     "987-654-3210",
+		"Contacted": "false",
+	},
+	{
+		"ID":        "3",
+		"Name":      "Jill Dole",
+		"Role":      "Payer",
+		"Email":     "jilldole@gmail.com",
+		"Phone":     "012-345-6789",
+		"Contacted": "true",
+	},
 }
 
 func inputCustomerInfo(inputPrintStatementNumber int) string {
