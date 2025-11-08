@@ -53,8 +53,8 @@ var customerMap = map[uint32]Customer{
 
 // Keys & Values MUST BE STRINGS Because JSON does NOT SUPPORT "uint32" AND/OR "structs"
 // (Need to Make CUSTOM Unmarshal Function to Display "customerMap" onto API as JSON Response)
-var customerMapsForAPI = map[string]map[string]string{
-	"1": {
+var customerMapsForAPI = []map[string]string{
+	{
 		"ID":        "1",
 		"Name":      "John Doe",
 		"Role":      "Buyer",
@@ -62,7 +62,7 @@ var customerMapsForAPI = map[string]map[string]string{
 		"Phone":     "123-456-7890",
 		"Contacted": "true",
 	},
-	"2": {
+	{
 		"ID":        "2",
 		"Name":      "Jane Doe",
 		"Role":      "Payer",
@@ -70,7 +70,7 @@ var customerMapsForAPI = map[string]map[string]string{
 		"Phone":     "987-654-3210",
 		"Contacted": "false",
 	},
-	"3": {
+	{
 		"ID":        "3",
 		"Name":      "Jill Dole",
 		"Role":      "Payer",
@@ -159,7 +159,7 @@ func chooseCustomerInfo(addingNewCustomer bool) bool {
 			"Phone":     customerInfoStrings[3],
 			"Contacted": "true",
 		}
-		customerMapsForAPI[stringKey] = customerInput
+		customerMapsForAPI[key] = customerInput
 
 		return true
 	case "false":
@@ -175,7 +175,7 @@ func chooseCustomerInfo(addingNewCustomer bool) bool {
 			"Phone":     customerInfoStrings[3],
 			"Contacted": "false",
 		}
-		customerMapsForAPI[stringKey] = customerInput
+		customerMapsForAPI[key] = customerInput
 
 		return true
 	default:
@@ -282,7 +282,7 @@ func removeCustomer(w http.ResponseWriter, r *http.Request) {
 	// "inputCustomerInfo(0)" -> Saves Customer Name that User Chose & Checks if Customer Exists
 	if doesCustomerExist(true, inputCustomerInfo(0)) != (Customer{}) {
 		delete(customerMap, key)
-		delete(customerMapsForAPI, stringKey)
+		customerMapsForAPI = append(customerMapsForAPI[:key], customerMapsForAPI[key+1:]...)
 
 		// Organizes Terminal Output by Preventing "print statement" & Result of Postman request from Being On the Same Line
 		fmt.Println("\n")
