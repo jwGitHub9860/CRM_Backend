@@ -166,8 +166,8 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 		keys = append(keys, k)
 	}
 	sort.Slice(keys, func(i, j int) bool { return keys[i] < keys[j] })
-	for _, customer := range customerMap {
-		fmt.Println(customer)
+	for _, k := range keys {
+		fmt.Printf("%2d: %s\n", k, keys[k])
 	}
 
 	// Returns "customerMapForAPI" as JSON Back to User in API Response
