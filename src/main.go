@@ -54,7 +54,7 @@ var customerMap = map[uint32]Customer{
 // Keys & Values MUST BE STRINGS Because JSON does NOT SUPPORT "uint32" AND/OR "structs"
 // (Need to Make CUSTOM Unmarshal Function to Display "customerMap" onto API as JSON Response)
 var customerMapsForAPI = map[string]map[string]string{
-	"Customer 1": {
+	"1": {
 		"ID":        "1",
 		"Name":      "John Doe",
 		"Role":      "Buyer",
@@ -62,7 +62,7 @@ var customerMapsForAPI = map[string]map[string]string{
 		"Phone":     "123-456-7890",
 		"Contacted": "true",
 	},
-	"Customer 2": {
+	"2": {
 		"ID":        "2",
 		"Name":      "Jane Doe",
 		"Role":      "Payer",
@@ -70,7 +70,7 @@ var customerMapsForAPI = map[string]map[string]string{
 		"Phone":     "987-654-3210",
 		"Contacted": "false",
 	},
-	"Customer 3": {
+	"3": {
 		"ID":        "3",
 		"Name":      "Jill Dole",
 		"Role":      "Payer",
