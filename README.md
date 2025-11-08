@@ -33,6 +33,8 @@ Dave, and Juan Carlos Garcia. “Sorting Unsigned Ints in Go.” _Stack Overflow
 
 “Different Ways to Find the Type of Variable in Golang.” _GeeksforGeeks_, GeeksforGeeks, 12 July 2025, www.geeksforgeeks.org/go-language/different-ways-to-find-the-type-of-variable-in-golang/. Accessed 29 Oct. 2025.
 
+DJElbow, and ANisus. “Sorting a Map of Structs - GOLANG.” _Stack Overflow_, 13 Nov. 2013, stackoverflow.com/questions/19946992/sorting-a-map-of-structs-golang. Accessed 7 Nov. 2025.
+
 “func Slice.” _Sort Package - Sort - Go Packages_, pkg.go.dev/sort@master#Slice. Accessed 7 Nov. 2025.
 
 “Go by Example: For.” _Go by Example: For_, gobyexample.com/for. Accessed 28 Oct. 2025.
@@ -76,6 +78,8 @@ Rees, Lucas. “Working with Null Values in Go: A Complete Guide.” _Go/Golang 
 RoboTamer, and Ekkehard.Horner. “Golang Map Prints out of Order.” _Stack Overflow_, 24 Aug. 2012, stackoverflow.com/questions/12108215/golang-map-prints-out-of-order. Accessed 6 Nov. 2025.
 
 Sanjeev. “Custom Golang HTTP Router.” _Medium_, Medium, 13 June 2021, sanjeevsiva.medium.com/custom-golang-http-router-970a309531d7. Accessed 28 Oct. 2025.
+
+serpent7655, and uhhd. “R/Golang on Reddit: Anyone Knows How Can Go Sort Struct by Multiple Fields?” _Reddit_, 2024, www.reddit.com/r/golang/comments/1fnyydy/anyone_knows_how_can_go_sort_struct_by_multiple/. Accessed 7 Nov. 2025.
 
 “Strconv.” _Strconv Package - Strconv - Go Packages_, pkg.go.dev/strconv. Accessed 3 Nov. 2025.
 
