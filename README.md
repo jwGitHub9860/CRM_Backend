@@ -25,11 +25,6 @@ There will be mock customer data to allow user to perform CRUD operations in Pos
 <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/>
 
 
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
-
-
 ## Credits
 ###### References used while making project
 
@@ -130,3 +125,8 @@ Wada, Kengo. “Go Routing 101: Handling and Grouping Routes with Net/Http.” _
 Warmth, Vinyl, and BadZen. “Why Is My Go Lang String Comparison Not Working as Expected?” _Stack Overflow_, 5 Nov. 2016, stackoverflow.com/questions/40442971/why-is-my-go-lang-string-comparison-not-working-as-expected. Accessed 29 Oct. 2025.
 
 “Yuku,” Randy Sugianto, et al. “How to Efficiently Concatenate Strings in Go.” _Stack Overflow_, 15 Dec. 2015, stackoverflow.com/questions/1760757/how-to-efficiently-concatenate-strings-in-go. Accessed 6 Nov. 2025.
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
