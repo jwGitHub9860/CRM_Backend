@@ -34,6 +34,8 @@ asker152, et al. “Error Message ‘Go: Go.Mod File Not Found in Current Direct
 
 B., Clive. “Concatenating Strings in Go.” _Sentry_, 15 Oct. 2024, sentry.io/answers/concatenating-strings-in-go/. Accessed 6 Nov. 2025.
 
+“Basic Writing and Formatting Syntax.” _GitHub Docs_, docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax. Accessed 9 Nov. 2025.
+
 BenjB, et al. “How to Use a `switch` Statement in Go.” _Stack Overflow_, 21 Dec. 2021, stackoverflow.com/questions/70438741/how-to-use-a-switch-statement-in-go. Accessed 6 Nov. 2025.
 
 Biswas, Pradip, and fuglede. “Issues in Go with JSON Unmarshal of Map[String]Int64.” Edited by Fuglede, _Stack Overflow_, 9 Oct. 2019, stackoverflow.com/questions/58307298/issues-in-go-with-json-unmarshal-of-mapstringint64#:~:text=As%20you’ve%20noted%20yourself,18.3k3%2062%20107. Accessed 4 Nov. 2025.
