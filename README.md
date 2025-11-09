@@ -1,16 +1,14 @@
 # Project: CRM_Backend
 
-### Description:
+### <ins>Description:</ins>
 
 This project involves building the backend (i.e. server-side portion) of a CRM application. The backend will allow the user make HTTP requests to the Postman server to perform CRUD operations (Create, Read, Update, and Delete).
 
 There will be mock customer data to allow user to perform CRUD operations in Postman application.
 
-## Creation Date
+### <ins>Creation Date:</ins>
 
-**10/26/2025**
-
-## Languages and Tools
+> 10/26/2025
 
 ### <ins>Languages:</ins>
 
@@ -24,6 +22,23 @@ There will be mock customer data to allow user to perform CRUD operations in Pos
 
 <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/>
 
+
+## How to Install and Run the Project
+
+1. Clone project
+2. Open Visual Studio Code _(optional)_
+3. Open Terminal in Visual Studio Code or local Command Prompt
+4. Change directory to where "main.go" file is being kept
+5. Use the following text below to run the project
+```
+go run main.go
+```
+6. Hit **Ctrl+C** to exit project
+
+
+## How to Use the Project
+
+1. 
 
 ## Credits
 ###### References used while making project
