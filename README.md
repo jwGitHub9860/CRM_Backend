@@ -25,6 +25,11 @@ There will be mock customer data to allow user to perform CRUD operations in Pos
 <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/>
 
 
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+
 ## Credits
 ###### References used while making project
 
@@ -83,6 +88,8 @@ Kelche, Kevin. “How to Accept User Input with Spaces in Golang.” _Kelche_, 2
 Kfir, and mbuechmann. “Use different structs as a value in map golang.” _Stack Overflow_, 8 Nov. 2018, stackoverflow.com/questions/53204138/use-different-structs-as-a-value-in-map-golang. Accessed 27 Oct. 2025.
 
 Koharim67, and Ezequiel Muns. “Find an Item in Array of Maps and Delete It.” _Stack Overflow_, 26 Oct. 2021, stackoverflow.com/questions/69722669/find-an-item-in-array-of-maps-and-delete-it. Accessed 8 Nov. 2025.
+
+“MIT License.” _Choose a License_, 26 Oct. 2025, choosealicense.com/licenses/mit/. Accessed 9 Nov. 2025.
 
 “MLA Works Cited: Electronic Sources (Web Publications).” _MLA Works Cited: Electronic Sources - Purdue OWL® - Purdue University_, owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_works_cited_electronic_sources.html. Accessed 26 Oct 2025.
 
