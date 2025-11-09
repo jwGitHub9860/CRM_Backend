@@ -29,11 +29,16 @@ There will be mock customer data to allow user to perform CRUD operations in Pos
 2. Open Visual Studio Code _(optional)_
 3. Open Terminal in Visual Studio Code or local Command Prompt
 4. Change directory to where "main.go" file is being kept
-5. Use the following text below to run the project
+5. _If this is the **first time** running the project_, use the following text below to allow project to run
+```
+go mod init
+go mod tidy
+```
+6. Use the following text below to run the project
 ```
 go run main.go
 ```
-6. Hit **Ctrl+C** to exit project
+7. Hit **Ctrl+C** to exit project
 
 
 ## How to Use the Project
