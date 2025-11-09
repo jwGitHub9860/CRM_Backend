@@ -54,6 +54,8 @@ DJElbow, and ANisus. “Sorting a Map of Structs - GOLANG.” _Stack Overflow_, 
 
 “func Slice.” _Sort Package - Sort - Go Packages_, pkg.go.dev/sort@master#Slice. Accessed 7 Nov. 2025.
 
+“GitHub Profile README Generator.” _GitHub Profile Readme Generator | GitHub Profile Readme Generator_, rahuldkjain.github.io/gh-profile-readme-generator/. Accessed 9 Nov. 2025.
+
 “Go by Example: For.” _Go by Example: For_, gobyexample.com/for. Accessed 28 Oct. 2025.
 
 “Go by Example: Switch.” _Go by Example: Switch_, gobyexample.com/switch. Accessed 6 Nov. 2025.
@@ -82,6 +84,8 @@ Koharim67, and Ezequiel Muns. “Find an Item in Array of Maps and Delete It.”
 
 Naresh, and peterSO. “Convert String to Uint in Go Lang.” Edited by Danack, _Stack Overflow_, 2 Feb. 2016, stackoverflow.com/questions/35154875/convert-string-to-uint-in-go-lang. Accessed 3 Nov. 2025.
 
+Nyakundi, Hillary. “How to Write a Good README File for Your GitHub Project.” _freeCodeCamp.Org_, freeCodeCamp.org, 8 Dec. 2021, www.freecodecamp.org/news/how-to-write-a-good-readme-file/. Accessed 9 Nov. 2025.
+
 “Online Compiler and Debugger for C/C++.” _GDB Online Debugger_, www.onlinegdb.com/. Accessed 28 Oct. 2025.
 
 Philip, and Jeff Emanuel. “Using Count to Find the Last Element in Struct / Map.” _Go Forum_, 4 Feb. 2022, forum.golangbridge.org/t/using-count-to-find-the-last-element-in-struct-map/26367. Accessed 1 Nov. 2025.
@@ -91,6 +95,8 @@ r/golang. “Convert Uint to String.” _Reddit_, 2024, www.reddit.com/r/golang/
 r/golang, and edgmnt_net. “CRUD, Return Empty Struct or Nil?” _Reddit_, 2022, www.reddit.com/r/golang/comments/vd1upf/crud_return_empty_struct_or_nil/. Accessed 30 Oct. 2025.
 
 r/golang, and phlatphrog. “How to Pass a Generic Map Parameter to Function.” _Reddit_, 2017, www.reddit.com/r/golang/comments/7p879p/how_to_pass_a_generic_map_parameter_to_function/. Accessed 27 Oct. 2025.
+
+“README 101.” _Make a README_, GitHub, www.makeareadme.com/. Accessed 9 Nov. 2025.
 
 Rees, Lucas. “Working with Null Values in Go: A Complete Guide.” _Go/Golang Programming and Scripting_, 2 Feb. 2021, golang.howtos.io/working-with-null-values-in-go-a-complete-guide/. Accessed 30 Oct. 2025.
 
