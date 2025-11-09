@@ -2,15 +2,28 @@
 
 ### Description:
 
-The project allows the user to edit customer information of website application.
+This project involves building the backend (i.e. server-side portion) of a CRM application. The backend will allow the user make HTTP requests to the Postman server to perform CRUD operations (Create, Read, Update, and Delete).
 
-## Files Used
+There will be mock customer data to allow user to perform CRUD operations in Postman application.
 
-_None_
-
-## Date created
+## Creation Date
 
 **10/26/2025**
+
+## Languages and Tools
+
+### <ins>Languages:</ins>
+
+**GO (Golang)**
+
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg" alt="go" width="40" height="40"/> </a>
+
+### <ins>Tools:</ins>
+
+**Postman**
+
+<img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/>
+
 
 ## Credits
 ###### References used while making project
