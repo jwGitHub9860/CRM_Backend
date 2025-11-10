@@ -31,6 +31,7 @@ There will be mock customer data to allow user to perform CRUD operations in Pos
 4. Change directory to where "main.go" file is being kept
 5. _If this is the **first time** running the project_, use the following text below to allow project to run
 ```
+go env -w GO111MODULE=auto
 go mod init
 go mod tidy
 ```
