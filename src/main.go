@@ -249,7 +249,7 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 		fmt.Print(customerExistence, "\n")
 		w.WriteHeader(http.StatusAccepted)
 	} else {
-		w.WriteHeader(http.StatusConflict)
+		w.WriteHeader(http.StatusNotFound)
 	}
 
 	// Encodes Customer as JSON
