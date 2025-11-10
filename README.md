@@ -2,9 +2,23 @@
 
 ### <ins>Description:</ins>
 
-This project involves building the backend (i.e. server-side portion) of a CRM application. The backend will allow the user make HTTP requests to the Postman server to perform CRUD operations (Create, Read, Update, and Delete).
+This project involves building the backend (i.e. server-side portion) of a CRM application. The backend will allow the user make HTTP requests to the Postman server to perform CRUD operations (Create, Read, Update, and Delete). The mock customer data will allow user to perform CRUD operations in Postman application.
 
-There will be mock customer data to allow user to perform CRUD operations in Postman application.
+**Visual Studio Code** is the application software where the project is made, edited, and tested. The **Postman** tool is used as the frontend of the CRM application when running and testing the project. **GitHub Desktop** is the application software that gives access to the project from _GitHub_ and allows it to be edited in _Visual Studio Code_.
+
+One challenge that has been faced is defining the following import statement in the project:
+```
+"github.com/gorilla/mux"
+```
+This challenge was overcome after doing some research and doing some trial and error with commands that were given by other people on _Stack Overflow_ until it was found that the following text below would define the import statement.
+```
+go env -w GO111MODULE=auto
+go mod init
+go mod tidy
+```
+Another challenge that has been faced is encoding the map holding the customer data. The map that was supposed to be encoded was ```map[uint32]struct``` type, not ```map[string]string``` type, making it a challenge to encode the map. After doing some research, editing the project code, and doing some trial and error with the code, it was discovered that maps with ```map[uint32]struct``` type need to be customly encoded and cannot be encoded using the built-in encoding method. This challenge was overcome by creating a new map with ```map[string]string``` type that held the same customer data as the map with ```map[uint32]struct``` type and encoding the map with ```map[string]string``` type using the built-in encoding method to keep the code simple and encode the map. 
+
+Another challenge that has been faced is ensuring that the correct chosen customer data was updated and/or removed. Sometimes after the customer was chosen to be updated or deleted, the wrong customer would be updated or deleted after it was found in the customer map. This challenge was overcome by adding code that displays the customer map in order by their IDs in the ```getAllCustomer()``` function.
 
 ### <ins>Creation Date:</ins>
 
