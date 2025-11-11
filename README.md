@@ -58,7 +58,13 @@ go run main.go
 
 ## How to Use the Project
 
-1. 
+1. Open Postman
+2. _If collection does not exist_, create new collection to hold request
+3. Create new request
+4. Enter URL that matches chosen request
+5. Choose Method that matches chosen request (GET, POST, PUT, DELETE)
+6. Hit the "Send" button to send the request
+
 
 ## Credits
 ###### References used while making project
