@@ -184,6 +184,10 @@ func chooseCustomerInfo(addingNewCustomer bool) bool {
 	}
 }
 
+func homePage(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "This project involves building the backend (i.e. server-side portion) of a CRM application. The backend will allow the user make HTTP requests to the Postman server to perform CRUD operations (Create, Read, Update, and Delete). The mock customer data will allow user to perform CRUD operations in Postman application.")
+}
+
 func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 	// Organizes Terminal Output by Keeping "whatToInputStatements" Strings Aligned to Left Side of Terminal
 	// (CANNOT do anything about Initial Two New Lines when server starts)
