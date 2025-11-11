@@ -310,6 +310,7 @@ func main() {
 	// Calls Functions as Handler Functions
 	router := mux.NewRouter().StrictSlash(true)
 
+	router.HandleFunc("/", homePage)
 	router.HandleFunc("/customers/{id}", getCustomer).Methods("GET")
 	router.HandleFunc("/customers", getAllCustomers).Methods("GET")
 	router.HandleFunc("/customers", addCustomer).Methods("POST")
