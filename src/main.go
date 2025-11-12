@@ -312,6 +312,8 @@ func removeCustomer(w http.ResponseWriter, r *http.Request) {
 			fmt.Print("\nindex:", index)
 			fmt.Print("\ncustomer:", customer)
 			fmt.Print("\ncustomerData:", customerData)
+			fmt.Print("\ncustomerData[id]:", customerData[id])
+			fmt.Print("\ncustomerData[\"ID\"]:", customerData["ID"], "\n")
 			// Checks if Customer Exists
 			if customer == id {
 				// Removes Chosen Customer
