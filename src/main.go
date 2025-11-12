@@ -300,6 +300,8 @@ func updateCustomer(w http.ResponseWriter, r *http.Request) {
 }
 
 func removeCustomer(w http.ResponseWriter, r *http.Request) {
+	customerNotFound := true
+
 	// Parse Path Parameters
 	vars := mux.Vars(r)
 
@@ -322,11 +324,15 @@ func removeCustomer(w http.ResponseWriter, r *http.Request) {
 				// Organizes Terminal Output by Preventing "print statement" & Result of Postman request from Being On the Same Line
 				fmt.Println("\n")
 
+				customerNotFound = false
+
 				w.WriteHeader(http.StatusAccepted)
-			} else {
-				w.WriteHeader(http.StatusNotFound)
 			}
 		}
+	}
+
+	if customerNotFound {
+		w.WriteHeader(http.StatusNotFound)
 	}
 }
 
