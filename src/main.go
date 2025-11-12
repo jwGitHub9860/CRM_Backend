@@ -268,28 +268,17 @@ func addCustomer(w http.ResponseWriter, r *http.Request) {
 	// 1. Set content type to JSON
 	w.Header().Set("Content-Type", "application/json")
 
-	// 2. Keep track of new entry
-	var newEntry map[string]string
+	// (2.) Holds New Customer Data in "map[string]string" Form
+	var newCustomer map[string]string
 
-	// 3. Obtains Body of POST Request from API (Input from API)
+	// (3.) Obtains Body of POST Request from API (Input from API)
 	reqBody, _ := ioutil.ReadAll(r.Body)
 
 	// 4. Parse JSON body
-	json.Unmarshal(reqBody, &newEntry)
+	json.Unmarshal(reqBody, &newCustomer)
 
-	// 5. Add new entry to "customerMapsForAPI"
-	for _, customerData := range customerMapsForAPI {
-		for k, v := range newEntry {
-			// Responds with conflict if entry exists
-			if _, ok := customerData[k]; ok {
-				w.WriteHeader(http.StatusConflict)
-			} else {
-				// Responds with OK if entry does not already exist
-				customerData[k] = v
-				w.WriteHeader(http.StatusCreated)
-			}
-		}
-	}
+	// (5.) Adds New Customer Data to "customerMapsForAPI"
+	customerMapsForAPI = append(customerMapsForAPI, newCustomer)
 
 	// 6. Returns "customerMapsForAPI"
 	// SORT OF Checks if Addition is Successful (error can occur when choosing "contacted" boolean)
