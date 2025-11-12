@@ -309,28 +309,28 @@ func removeCustomer(w http.ResponseWriter, r *http.Request) {
 	id := vars["id"]
 
 	for _, customerData := range customerMapsForAPI {
-		for index, customer := range customerData {
-			//fmt.Print("id:", id)
-			//fmt.Print("\nindex:", index)
-			//fmt.Print("\ncustomer:", customer)
-			//fmt.Print("\ncustomerData:", customerData)
-			//fmt.Print("\ncustomerData[id]:", customerData[id])
-			//fmt.Print("\ncustomerData[\"ID\"]:", customerData["ID"], "\n")
-			// Checks if Customer Exists
-			if customerData["ID"] == id {
-				intId, _ := strconv.Atoi(id)
+		//for index, customer := range customerData {
+		//fmt.Print("id:", id)
+		//fmt.Print("\nindex:", index)
+		//fmt.Print("\ncustomer:", customer)
+		//fmt.Print("\ncustomerData:", customerData)
+		//fmt.Print("\ncustomerData[id]:", customerData[id])
+		//fmt.Print("\ncustomerData[\"ID\"]:", customerData["ID"], "\n")
+		// Checks if Customer Exists
+		if customerData["ID"] == id {
+			intId, _ := strconv.Atoi(id)
 
-				// Removes Chosen Customer
-				customerMapsForAPI = append(customerMapsForAPI[:intId], customerMapsForAPI[intId+1:]...)
+			// Removes Chosen Customer
+			customerMapsForAPI = append(customerMapsForAPI[:intId], customerMapsForAPI[intId+1:]...)
 
-				// Organizes Terminal Output by Preventing "print statement" & Result of Postman request from Being On the Same Line
-				fmt.Println("\n")
+			// Organizes Terminal Output by Preventing "print statement" & Result of Postman request from Being On the Same Line
+			fmt.Println("\n")
 
-				customerNotFound = false
+			customerNotFound = false
 
-				w.WriteHeader(http.StatusAccepted)
-			}
+			w.WriteHeader(http.StatusAccepted)
 		}
+		//}
 	}
 
 	if customerNotFound {
