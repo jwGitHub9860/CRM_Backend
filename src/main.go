@@ -309,6 +309,7 @@ func removeCustomer(w http.ResponseWriter, r *http.Request) {
 	id := vars["id"]
 
 	for _, customerData := range customerMapsForAPI {
+		fmt.Print("Inside FOR LOOP")
 		//for index, customer := range customerData {
 		//fmt.Print("id:", id)
 		//fmt.Print("\nindex:", index)
@@ -318,6 +319,8 @@ func removeCustomer(w http.ResponseWriter, r *http.Request) {
 		//fmt.Print("\ncustomerData[\"ID\"]:", customerData["ID"], "\n")
 		// Checks if Customer Exists
 		if customerData["ID"] == id {
+			fmt.Print("Inside IF STATEMENT")
+
 			intId, _ := strconv.Atoi(id)
 
 			// Removes Chosen Customer
