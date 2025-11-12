@@ -300,17 +300,28 @@ func updateCustomer(w http.ResponseWriter, r *http.Request) {
 }
 
 func removeCustomer(w http.ResponseWriter, r *http.Request) {
-	// "inputCustomerInfo(0)" -> Saves Customer Name that User Chose & Checks if Customer Exists
-	if doesCustomerExist(true, inputCustomerInfo(0)) != (Customer{}) {
-		delete(customerMap, key)
-		customerMapsForAPI = append(customerMapsForAPI[:key], customerMapsForAPI[key+1:]...)
+	// Parse Path Parameters
+	vars := mux.Vars(r)
 
-		// Organizes Terminal Output by Preventing "print statement" & Result of Postman request from Being On the Same Line
-		fmt.Println("\n")
+	// Obtains "id" from Handle Function Path ("/customers/{id}")
+	id := vars["id"]
 
-		w.WriteHeader(http.StatusAccepted)
-	} else {
-		w.WriteHeader(http.StatusNotFound)
+	for _, customerData := range customerMapsForAPI {
+		// MUST ITERATE Through "customerData" to Access ID of Customer Data
+		for index, customer := customerData {
+			// Checks if Customer Exists
+			if customer.ID == id {
+				// Removes Chosen Customer
+				customerMapsForAPI = append(customerMapsForAPI[:index], customerMapsForAPI[index+1:]...)
+
+				// Organizes Terminal Output by Preventing "print statement" & Result of Postman request from Being On the Same Line
+				fmt.Println("\n")
+
+				w.WriteHeader(http.StatusAccepted)
+			} else {
+				w.WriteHeader(http.StatusNotFound)
+			}
+		}
 	}
 }
 
