@@ -308,7 +308,7 @@ func removeCustomer(w http.ResponseWriter, r *http.Request) {
 	// Obtains "id" from Handle Function Path ("/customers/{id}")
 	id := vars["id"]
 
-	for _, customerData := range customerMapsForAPI {
+	for index, customerData := range customerMapsForAPI {
 		fmt.Print("Inside FOR LOOP")
 		//for index, customer := range customerData {
 		fmt.Print("id:", id)
@@ -321,10 +321,8 @@ func removeCustomer(w http.ResponseWriter, r *http.Request) {
 		if customerData["ID"] == id {
 			fmt.Print("Inside IF STATEMENT")
 
-			intId, _ := strconv.Atoi(id)
-
 			// Removes Chosen Customer
-			customerMapsForAPI = append(customerMapsForAPI[:intId], customerMapsForAPI[intId+1:]...)
+			customerMapsForAPI = append(customerMapsForAPI[:index], customerMapsForAPI[index+1:]...)
 
 			// Organizes Terminal Output by Preventing "print statement" & Result of Postman request from Being On the Same Line
 			fmt.Println("\n")
