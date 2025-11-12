@@ -341,8 +341,6 @@ func removeCustomer(w http.ResponseWriter, r *http.Request) {
 	for index, customerData := range customerMapsForAPI {
 		// Checks if Customer Exists
 		if customerData["ID"] == id {
-			fmt.Print("Inside IF STATEMENT")
-
 			// Removes Chosen Customer
 			customerMapsForAPI = append(customerMapsForAPI[:index], customerMapsForAPI[index+1:]...)
 
