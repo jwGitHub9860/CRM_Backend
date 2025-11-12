@@ -315,7 +315,7 @@ func removeCustomer(w http.ResponseWriter, r *http.Request) {
 			fmt.Print("\ncustomerData[id]:", customerData[id])
 			fmt.Print("\ncustomerData[\"ID\"]:", customerData["ID"], "\n")
 			// Checks if Customer Exists
-			if customer == id {
+			if customerData["ID"] == id {
 				// Removes Chosen Customer
 				customerMapsForAPI = append(customerMapsForAPI[:3], customerMapsForAPI[3+1:]...)
 
