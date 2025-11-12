@@ -75,6 +75,8 @@ asker152, et al. “Error Message ‘Go: Go.Mod File Not Found in Current Direct
 
 B., Clive. “Concatenating Strings in Go.” _Sentry_, 15 Oct. 2024, sentry.io/answers/concatenating-strings-in-go/. Accessed 6 Nov. 2025.
 
+bansal1232. “REST API Introduction.” _GeeksforGeeks_, 3 Sept. 2025, www.geeksforgeeks.org/node-js/rest-api-introduction/. Accessed 10 Nov. 2025.
+
 “Basic Writing and Formatting Syntax.” _GitHub Docs_, docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax. Accessed 9 Nov. 2025.
 
 BenjB, et al. “How to Use a `switch` Statement in Go.” _Stack Overflow_, 21 Dec. 2021, stackoverflow.com/questions/70438741/how-to-use-a-switch-statement-in-go. Accessed 6 Nov. 2025.
@@ -97,6 +99,10 @@ Demir, David. “What Are HTTP Methods (GET, POST, PUT, DELETE).” _Apidog_, 31
 
 DJElbow, and ANisus. “Sorting a Map of Structs - GOLANG.” _Stack Overflow_, 13 Nov. 2013, stackoverflow.com/questions/19946992/sorting-a-map-of-structs-golang. Accessed 7 Nov. 2025.
 
+Forbes, Elliot. “Creating a RESTful API With Golang.” _TutorialEdge_, TutorialEdge, 15 Apr. 2017, tutorialedge.net/golang/creating-restful-api-with-golang/#creating-new-articles. Accessed 10 Nov. 2025.
+
+Forbes, Elliot. “How To Consume Data From A REST HTTP API With Go.” _TutorialEdge_, TutorialEdge, 5 June 2022, tutorialedge.net/golang/consuming-restful-api-with-go/#full-source-code. Accessed 10 Nov. 2025.
+
 “func Slice.” _Sort Package - Sort - Go Packages_, pkg.go.dev/sort@master#Slice. Accessed 7 Nov. 2025.
 
 “GitHub Profile README Generator.” _GitHub Profile Readme Generator | GitHub Profile Readme Generator_, rahuldkjain.github.io/gh-profile-readme-generator/. Accessed 9 Nov. 2025.
@@ -104,6 +110,8 @@ DJElbow, and ANisus. “Sorting a Map of Structs - GOLANG.” _Stack Overflow_, 
 “Go by Example: For.” _Go by Example: For_, gobyexample.com/for. Accessed 28 Oct. 2025.
 
 “Go by Example: Switch.” _Go by Example: Switch_, gobyexample.com/switch. Accessed 6 Nov. 2025.
+
+“Go Maps.” _W3Schools_, www.w3schools.com/go/go_maps.php. Accessed 11 Nov. 2025.
 
 Han, and Arin Yazilim. “Go Error: Go : Go.Mod File Not Found in Current Directory or Any Parent Directory; (Working on GOPATH/Src).” _Stack Overflow_, 1 Sept. 1965, stackoverflow.com/questions/67929883/go-error-go-go-mod-file-not-found-in-current-directory-or-any-parent-director/68508392#68508392. Accessed 28 Oct. 2025.
 
