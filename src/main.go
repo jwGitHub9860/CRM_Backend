@@ -310,12 +310,12 @@ func removeCustomer(w http.ResponseWriter, r *http.Request) {
 
 	for _, customerData := range customerMapsForAPI {
 		for index, customer := range customerData {
-			fmt.Print("id:", id)
-			fmt.Print("\nindex:", index)
-			fmt.Print("\ncustomer:", customer)
-			fmt.Print("\ncustomerData:", customerData)
-			fmt.Print("\ncustomerData[id]:", customerData[id])
-			fmt.Print("\ncustomerData[\"ID\"]:", customerData["ID"], "\n")
+			//fmt.Print("id:", id)
+			//fmt.Print("\nindex:", index)
+			//fmt.Print("\ncustomer:", customer)
+			//fmt.Print("\ncustomerData:", customerData)
+			//fmt.Print("\ncustomerData[id]:", customerData[id])
+			//fmt.Print("\ncustomerData[\"ID\"]:", customerData["ID"], "\n")
 			// Checks if Customer Exists
 			if customerData["ID"] == id {
 				intId, _ := strconv.Atoi(id)
