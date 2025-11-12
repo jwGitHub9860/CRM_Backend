@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"encoding/json"
 	"fmt"
-	"sort"
 	"strconv"
 
 	//"go/reader"
@@ -195,7 +194,7 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 
 	// Displays "customerMap" onto Terminal IN "ID" ORDER
 	// 1. Create Slice of Structs to Hold "customerMap" Values
-	var sortedMap []Customer
+	/*var sortedMap []Customer
 	for _, v := range customerMap {
 		sortedMap = append(sortedMap, v)
 	}
@@ -210,7 +209,7 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("Email:", data.email)
 		fmt.Println("Phone:", data.phone)
 		fmt.Println("Contacted:", data.contacted, "\n")
-	}
+	}*/
 
 	// Returns "customerMapsForAPI" as JSON Back to User in API Response
 	// 1. Set content type to JSON
