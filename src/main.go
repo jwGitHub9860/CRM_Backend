@@ -306,18 +306,20 @@ func removeCustomer(w http.ResponseWriter, r *http.Request) {
 	// Obtains "id" from Handle Function Path ("/customers/{id}")
 	id := vars["id"]
 
-	for index, customerData := range customerMapsForAPI {
-		// Checks if Customer Exists
-		if customerData[id] == id {
-			// Removes Chosen Customer
-			customerMapsForAPI = append(customerMapsForAPI[:index], customerMapsForAPI[index+1:]...)
+	for _, customerData := range customerMapsForAPI {
+		for index, customer := range customerData {
+			// Checks if Customer Exists
+			if customer == id {
+				// Removes Chosen Customer
+				customerMapsForAPI = append(customerMapsForAPI[:index], customerMapsForAPI[index+1:]...)
 
-			// Organizes Terminal Output by Preventing "print statement" & Result of Postman request from Being On the Same Line
-			fmt.Println("\n")
+				// Organizes Terminal Output by Preventing "print statement" & Result of Postman request from Being On the Same Line
+				fmt.Println("\n")
 
-			w.WriteHeader(http.StatusAccepted)
-		} else {
-			w.WriteHeader(http.StatusNotFound)
+				w.WriteHeader(http.StatusAccepted)
+			} else {
+				w.WriteHeader(http.StatusNotFound)
+			}
 		}
 	}
 }
