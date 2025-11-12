@@ -318,8 +318,10 @@ func removeCustomer(w http.ResponseWriter, r *http.Request) {
 			fmt.Print("\ncustomerData[\"ID\"]:", customerData["ID"], "\n")
 			// Checks if Customer Exists
 			if customerData["ID"] == id {
+				intId, _ := strconv.Atoi(id)
+
 				// Removes Chosen Customer
-				customerMapsForAPI = append(customerMapsForAPI[:3], customerMapsForAPI[3+1:]...)
+				customerMapsForAPI = append(customerMapsForAPI[:intId], customerMapsForAPI[intId+1:]...)
 
 				// Organizes Terminal Output by Preventing "print statement" & Result of Postman request from Being On the Same Line
 				fmt.Println("\n")
