@@ -83,6 +83,8 @@ BenjB, et al. “How to Use a `switch` Statement in Go.” _Stack Overflow_, 21 
 
 Biswas, Pradip, and fuglede. “Issues in Go with JSON Unmarshal of Map[String]Int64.” Edited by Fuglede, _Stack Overflow_, 9 Oct. 2019, stackoverflow.com/questions/58307298/issues-in-go-with-json-unmarshal-of-mapstringint64#:~:text=As%20you’ve%20noted%20yourself,18.3k3%2062%20107. Accessed 4 Nov. 2025.
 
+Bula, and fabmilo. “Setting up a Http Handler in Go.” _Stack Overflow_, 1 Nov. 1958, stackoverflow.com/questions/25512486/setting-up-a-http-handler-in-go. Accessed 10 Nov. 2025.
+
 Chris, Kolade. “CRUD Operations – What Is CRUD?” _freeCodeCamp.Org_, freeCodeCamp.org, 15 June 2022, www.freecodecamp.org/news/crud-operations-explained/. Accessed 9 Nov. 2025.
 
 “Constants.” _Http Package - Net/Http - Go Packages_, pkg.go.dev/net/http#pkg-constants. Accessed 28 Oct. 2025.
