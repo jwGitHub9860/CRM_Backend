@@ -73,7 +73,9 @@ Antolín-Camarena, Omar, and Jeremy Wall. “How to Use Arbitrary Length Sequenc
 
 asker152, et al. “Error Message ‘Go: Go.Mod File Not Found in Current Directory or Any Parent Directory; See “Go Help Modules.”’” Edited by DailyLearner and Peter Mortensen, _Stack Overflow_, 31 Mar. 2021, stackoverflow.com/questions/66894200/error-message-go-go-mod-file-not-found-in-current-directory-or-any-parent-dire. Accessed 28 Oct. 2025.
 
-B., Clive. “Concatenating Strings in Go.” _Sentry_, 15 Oct. 2024, sentry.io/answers/concatenating-strings-in-go/. Accessed 6 Nov. 2025.
+B., Clive. “Concatenating Strings in Go.” _SENTRY_, 15 Oct. 2024, sentry.io/answers/concatenating-strings-in-go/. Accessed 6 Nov. 2025.
+
+B., Clive. “Converting a String to an Integer in Go.” _SENTRY_, 15 Dec. 2024, sentry.io/answers/converting-a-string-to-an-integer-in-go/. Accessed 11 Nov. 2025.
 
 bansal1232. “REST API Introduction.” _GeeksforGeeks_, 3 Sept. 2025, www.geeksforgeeks.org/node-js/rest-api-introduction/. Accessed 10 Nov. 2025.
 
