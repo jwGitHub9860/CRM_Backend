@@ -286,15 +286,45 @@ func addCustomer(w http.ResponseWriter, r *http.Request) {
 }
 
 func updateCustomer(w http.ResponseWriter, r *http.Request) {
-	// Checks if Customer Exists & "inputCustomerInfo(5)" -> Choose Customer Name to Choose which Customer to Update
-	if doesCustomerExist(true, inputCustomerInfo(5)) != (Customer{}) {
-		// Checks if Update is Successful (error can occur when choosing "contacted" boolean)
-		if chooseCustomerInfo(false) {
+	// Set New Content Type to JSON
+	w.Header().Set("Content-Type", "application/json")
+
+	// Holds New Customer Data in "Customer" Form
+	//var newCustomer Customer
+	var newCustomer map[string]string
+
+	// Obtains Body of POST Request from API (Input from API)
+	reqBody, _ := ioutil.ReadAll(r.Body)
+
+	// Parse JSON body
+	json.Unmarshal(reqBody, &newCustomer)
+
+	customerNotFound := true
+
+	// Parse Path Parameters
+	vars := mux.Vars(r)
+
+	// Obtains "id" from Handle Function Path ("/customers/{id}")
+	id := vars["id"]
+
+	for index, customerData := range customerMapsForAPI {
+		// Checks if Customer Exists
+		if customerData["ID"] == id {
+			// Removes Chosen Customer
+			customerMapsForAPI = append(customerMapsForAPI[:index], customerMapsForAPI[index+1:]...)
+
+			// Adds New UPDATED Customer Data to "customerMapsForAPI"
+			customerMapsForAPI = append(customerMapsForAPI, newCustomer)
+
+			// Returns "customerMapsForAPI"
+			json.NewEncoder(w).Encode(customerMapsForAPI)
+
+			customerNotFound = false
 			w.WriteHeader(http.StatusAccepted)
-		} else {
-			w.WriteHeader(http.StatusConflict)
 		}
-	} else {
+	}
+
+	if customerNotFound {
 		w.WriteHeader(http.StatusNotFound)
 	}
 }
