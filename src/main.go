@@ -341,6 +341,9 @@ func updateCustomer(w http.ResponseWriter, r *http.Request) {
 }
 
 func removeCustomer(w http.ResponseWriter, r *http.Request) {
+	// Set New Content Type to JSON
+	w.Header().Set("Content-Type", "application/json")
+
 	customerNotFound := true
 
 	// Parse Path Parameters
