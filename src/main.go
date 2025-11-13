@@ -192,7 +192,11 @@ func main() {
 	// Calls Functions as Handler Functions
 	router := mux.NewRouter().StrictSlash(true)
 
-	router.HandleFunc("/", homePage)
+	// Accesses "index.html" as Default File
+	fileServer := http.FileServer(http.Dir("./static"))
+	router.Handle("/", fileServer)
+
+	//router.HandleFunc("/", homePage)
 	router.HandleFunc("/customers/{id}", getCustomer).Methods("GET")
 	router.HandleFunc("/customers", getAllCustomers).Methods("GET")
 	router.HandleFunc("/customers", addCustomer).Methods("POST")
@@ -201,4 +205,5 @@ func main() {
 
 	fmt.Println("Server is starting...")
 	http.ListenAndServe(":3000", router)
+	http.ListenAndServe(":3000", nil)
 }
