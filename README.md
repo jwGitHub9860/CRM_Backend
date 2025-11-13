@@ -20,6 +20,8 @@ Another challenge that has been faced is encoding the map holding the customer d
 
 Another challenge that has been faced is ensuring that the correct chosen customer data was updated and/or removed. Sometimes after the customer was chosen to be updated or deleted, the wrong customer would be updated or deleted after it was found in the customer map. This challenge was overcome by adding code that displays the customer map in order by their IDs in the ```getAllCustomer()``` function.
 
+Another challenge that has been faced is restructuring the "README.md" file. After previously completing and passing the project for "_Course 5: Introduction to Version Control_" of the "_Programming for Data Science with Python_" Udacity program, the "README.md" file of that project has been used as a template for other projects to document them appropriately. The reason being that the "README.md" file passed the part of the project where the "_README.md file is appropriately filled out for the previous project_". After the "README.md" file of this project did not pass the project criteria, the file was revised to document the project properly.
+
 ### <ins>Creation Date:</ins>
 
 > 10/26/2025
