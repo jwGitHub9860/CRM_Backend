@@ -315,16 +315,17 @@ func updateCustomer(w http.ResponseWriter, r *http.Request) {
 			// Adds New UPDATED Customer Data to "customerMapsForAPI"
 			customerMapsForAPI = append(customerMapsForAPI, newCustomer)
 
-			// Returns "customerMapsForAPI"
-			json.NewEncoder(w).Encode(customerMapsForAPI)
-
 			customerNotFound = false
-			w.WriteHeader(http.StatusAccepted)
 		}
 	}
 
 	if customerNotFound {
 		w.WriteHeader(http.StatusNotFound)
+	} else {
+		// Returns "customerMapsForAPI"
+		json.NewEncoder(w).Encode(customerMapsForAPI)
+
+		w.WriteHeader(http.StatusAccepted)
 	}
 }
 
