@@ -348,13 +348,16 @@ func removeCustomer(w http.ResponseWriter, r *http.Request) {
 			fmt.Println("\n")
 
 			customerNotFound = false
-
-			w.WriteHeader(http.StatusAccepted)
 		}
 	}
 
 	if customerNotFound {
 		w.WriteHeader(http.StatusNotFound)
+	} else {
+		// Returns "customerMapsForAPI" & Displays "customerMapsForAPI" on API
+		json.NewEncoder(w).Encode(customerMapsForAPI)
+
+		w.WriteHeader(http.StatusAccepted)
 	}
 }
 
