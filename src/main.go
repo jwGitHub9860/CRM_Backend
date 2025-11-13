@@ -194,9 +194,9 @@ func main() {
 
 	// Accesses "index.html" as Default File
 	fileServer := http.FileServer(http.Dir("./static"))
-	http.Handle("/", fileServer)
+	router.Handle("/", fileServer)
 
-	router.HandleFunc("/", homePage)
+	//router.HandleFunc("/", homePage)
 	router.HandleFunc("/customers/{id}", getCustomer).Methods("GET")
 	router.HandleFunc("/customers", getAllCustomers).Methods("GET")
 	router.HandleFunc("/customers", addCustomer).Methods("POST")
