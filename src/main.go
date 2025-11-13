@@ -184,37 +184,10 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 }
 
 func getAllCustomers(w http.ResponseWriter, r *http.Request) {
-	// Returns "customerMapsForAPI" as JSON Back to User in API Response
-	// 1. Set content type to JSON
+	// Sets content type to JSON
 	w.Header().Set("Content-Type", "application/json")
 
-	// 2. Keep track of new entry -> Holds UNMARSHALED Data & MUST BE "map[string]string" or Entry will NOT UNMARSHAL CORRECTLY
-	var newEntry_test_3 map[string]string
-
-	// 3. Read the request -> Reads all Data from "reader"
-	reqBody, readRequestError := ioutil.ReadAll(r.Body)
-	if readRequestError != nil {
-		fmt.Print("Failed to Read Request")
-	}
-
-	// 4. Parse JSON body
-	json.Unmarshal(reqBody, &newEntry_test_3)
-
-	// 5. Add new entry to "customerMapsForAPI"
-	for _, customerData := range customerMapsForAPI {
-		for k, v := range newEntry_test_3 {
-			// Responds with conflict if entry exists
-			if _, ok := customerData[k]; ok {
-				w.WriteHeader(http.StatusConflict)
-			} else {
-				// Responds with OK if entry does not already exist
-				customerData[k] = v
-				w.WriteHeader(http.StatusCreated)
-			}
-		}
-	}
-
-	// 6. Returns "customerMapsForAPI"
+	// Returns WHOLE "customerMapsForAPI" as JSON Back to User in API Response
 	json.NewEncoder(w).Encode(customerMapsForAPI)
 }
 
