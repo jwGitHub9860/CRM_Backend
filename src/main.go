@@ -1,17 +1,12 @@
 package main
 
 import (
-	"bufio"
 	"encoding/json"
 	"fmt"
-	"strconv"
 
-	//"go/reader"
 	"io/ioutil"
-	"strings"
 
 	"net/http"
-	"os"
 
 	"github.com/gorilla/mux"
 )
@@ -23,31 +18,6 @@ type Customer struct {
 	email     string
 	phone     string
 	contacted bool
-}
-
-// Undefined because "key" will CONSTANTLY CHANGE
-var key uint32
-
-// Undefined because "stringKey" will CONSTANTLY CHANGE & Key for "customerMapsForAPI" Map
-var stringKey string
-
-// Undefined because "updateKey" will CONSTANTLY CHANGE & Key for Updating "customerMap" Map
-var updateKey uint32
-
-var whatToInputStatements = []string{
-	"Enter Customer Name: ",
-	"Enter Customer Role: ",
-	"Enter Customer Email: ",
-	"Enter Customer Phone: ",
-	"Enter Customer contacted: ",
-	"Choose Customer to Update (via customer name): ",
-}
-
-// Map for Terminal & Other Functions
-var customerMap = map[uint32]Customer{
-	1: {1, "John Doe", "Buyer", "johndoe@gmail.com", "123-456-7890", true},
-	2: {2, "Jane Doe", "Payer", "janedoe@gmail.com", "987-654-3210", false},
-	3: {3, "Jill Dole", "Payer", "jilldole@gmail.com", "012-345-6789", true},
 }
 
 // Keys & Values MUST BE STRINGS Because JSON does NOT SUPPORT "uint32" AND/OR "structs"
@@ -77,106 +47,6 @@ var customerMapsForAPI = []map[string]string{
 		"Phone":     "012-345-6789",
 		"Contacted": "true",
 	},
-}
-
-func inputCustomerInfo(inputPrintStatementNumber int) string {
-	// Takes User Input
-	reader := bufio.NewReader(os.Stdin)
-	fmt.Println(whatToInputStatements[inputPrintStatementNumber])
-	userInput, _ := reader.ReadString('\n')
-	return strings.Trim(userInput, "\r\n")
-}
-
-func doesCustomerExist(customerNotFound bool, userInput string) Customer {
-	// Checks if "userInput" Exists
-	for mapKey, customer := range customerMap {
-		// Defines "key" for "delete()" command to Indicate Which Customer to Remove
-		key = mapKey
-
-		// MUST USE "strings.Compare(userInput, customer.name) == 0", Using "userInput == customer.name" Defines "userInput" & "customer.name" as NOT EQUAL EVEN THOUGH THEY ARE EQUAL
-		if strings.Compare(userInput, customer.name) == 0 {
-			customerNotFound = false
-
-			// Defines "updateKey" for "updateCustomer()" function When Adding New Customer to "customerMap"
-			updateKey = mapKey
-
-			// Defines "stringKey" for "getCustomer()" function to Indicate Which Customer Data to Display on API
-			stringKey = strconv.FormatUint(uint64(mapKey), 10)
-
-			return customer
-		}
-	}
-
-	// Displays if Customer was NOT FOUND
-	if customerNotFound {
-		// Returns NULL VALUE for "struct"
-		return Customer{}
-	}
-
-	// Fixes "missing return statement" Error
-	return Customer{}
-}
-
-func chooseCustomerInfo(addingNewCustomer bool) bool {
-	// Initializes Strings to EMPTY because Strings will CONSTANTLY CHANGE
-	customerInfoStrings := [5]string{}
-
-	for i := 0; i < 5; i++ {
-		customerInfoStrings[i] = inputCustomerInfo(i)
-	}
-
-	// Checks if New Customer OR Updated Customer ALREADY Exists for "addCustomer()" function
-	if doesCustomerExist(true, customerInfoStrings[0]) != (Customer{}) {
-		fmt.Println("\nCustomer already exists.")
-		return false
-	}
-
-	// Defines "key" & "stringKey" to allow "addCustomer()" function to Add New Customer to "customerMap" & "customerMapsForAPI"
-	if addingNewCustomer {
-		key += 1
-	} else {
-		key = updateKey
-	}
-	stringKey = strconv.FormatUint(uint64(key), 10)
-
-	// Adds or Updates Customer Info
-	switch customerInfoStrings[4] {
-	case "true":
-		customerMap[key] = Customer{
-			key, customerInfoStrings[0], customerInfoStrings[1], customerInfoStrings[2], customerInfoStrings[3], true,
-		}
-
-		customerInput := map[string]string{
-			"ID":        stringKey,
-			"Name":      customerInfoStrings[0],
-			"Role":      customerInfoStrings[1],
-			"Email":     customerInfoStrings[2],
-			"Phone":     customerInfoStrings[3],
-			"Contacted": "true",
-		}
-		customerMapsForAPI[key] = customerInput
-
-		return true
-	case "false":
-		customerMap[key] = Customer{
-			key, customerInfoStrings[0], customerInfoStrings[1], customerInfoStrings[2], customerInfoStrings[3], false,
-		}
-
-		customerInput := map[string]string{
-			"ID":        stringKey,
-			"Name":      customerInfoStrings[0],
-			"Role":      customerInfoStrings[1],
-			"Email":     customerInfoStrings[2],
-			"Phone":     customerInfoStrings[3],
-			"Contacted": "false",
-		}
-		customerMapsForAPI[key] = customerInput
-
-		return true
-	default:
-		fmt.Println("\nCustomer contacted must be either \"true\" or \"false\".")
-		return false
-	}
 }
 
 func homePage(w http.ResponseWriter, r *http.Request) {
