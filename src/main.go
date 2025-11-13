@@ -246,21 +246,32 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 }
 
 func getCustomer(w http.ResponseWriter, r *http.Request) {
-	// Checks if Customer Exists
-	customerExistence := doesCustomerExist(true, inputCustomerInfo(0))
-	if customerExistence != (Customer{}) {
-		fmt.Print(customerExistence, "\n")
-		w.WriteHeader(http.StatusAccepted)
-	} else {
-		w.WriteHeader(http.StatusNotFound)
+	// Sets content type to JSON
+	w.Header().Set("Content-Type", "application.json")
+
+	customerNotFound := true
+
+	// Parse Path Parameters
+	vars := mux.Vars(r)
+
+	// Obtains "id" from Handle Function Path ("/customers/{id}")
+	id := vars["id"]
+
+	for _, customerData := range customerMapsForAPI {
+		// Checks if Customer Exists
+		if customerData["ID"] == id {
+			customerNotFound = false
+
+			// Returns "customerMapsForAPI"
+			json.NewEncoder(w).Encode(customerData)
+
+			w.WriteHeader(http.StatusAccepted)
+		}
 	}
 
-	// Encodes Customer as JSON
-	w.Header().Set("Content-Type", "application.json")
-	w.WriteHeader(http.StatusOK)
-	w.WriteHeader(http.StatusAccepted)
-
-	json.NewEncoder(w).Encode(customerMapsForAPI[key])
+	if customerNotFound {
+		w.WriteHeader(http.StatusNotFound)
+	}
 }
 
 func addCustomer(w http.ResponseWriter, r *http.Request) {
