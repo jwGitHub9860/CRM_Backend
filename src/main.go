@@ -189,12 +189,12 @@ func removeCustomer(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	// Accesses "index.html" as Default File
-	//fileServer := http.FileServer(http.Dir("./static"))
-	//http.Handle("/", fileServer)
-
 	// Calls Functions as Handler Functions
 	router := mux.NewRouter().StrictSlash(true)
+
+	// Accesses "index.html" as Default File
+	fileServer := http.FileServer(http.Dir("./static"))
+	http.Handle("/", fileServer)
 
 	router.HandleFunc("/", homePage)
 	router.HandleFunc("/customers/{id}", getCustomer).Methods("GET")
