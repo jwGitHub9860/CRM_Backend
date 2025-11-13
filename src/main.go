@@ -80,10 +80,6 @@ var customerMapsForAPI = []map[string]string{
 }
 
 func inputCustomerInfo(inputPrintStatementNumber int) string {
-	// Organizes Terminal Output by Keeping "whatToInputStatements" Strings Aligned to Left Side of Terminal
-	// (CANNOT do anything about Initial Two New Lines when server starts)
-	fmt.Println("\n")
-
 	// Takes User Input
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Println(whatToInputStatements[inputPrintStatementNumber])
@@ -188,10 +184,6 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 }
 
 func getAllCustomers(w http.ResponseWriter, r *http.Request) {
-	// Organizes Terminal Output by Keeping "whatToInputStatements" Strings Aligned to Left Side of Terminal
-	// (CANNOT do anything about Initial Two New Lines when server starts)
-	fmt.Println("\n")
-
 	// Returns "customerMapsForAPI" as JSON Back to User in API Response
 	// 1. Set content type to JSON
 	w.Header().Set("Content-Type", "application/json")
@@ -338,9 +330,6 @@ func removeCustomer(w http.ResponseWriter, r *http.Request) {
 		if customerData["ID"] == id {
 			// Removes Chosen Customer
 			customerMapsForAPI = append(customerMapsForAPI[:index], customerMapsForAPI[index+1:]...)
-
-			// Organizes Terminal Output by Preventing "print statement" & Result of Postman request from Being On the Same Line
-			fmt.Println("\n")
 
 			customerNotFound = false
 		}
