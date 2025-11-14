@@ -50,7 +50,13 @@ var customerMapsForAPI = []map[string]string{
 }
 
 func homePage(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "This project involves building the backend (i.e. server-side portion) of a CRM application. The backend will allow the user make HTTP requests to the Postman server to perform CRUD operations (Create, Read, Update, and Delete). The mock customer data will allow user to perform CRUD operations in Postman application.")
+	fmt.Fprintf(w, "This project involves building the backend (i.e. server-side portion) of a CRM application. The backend will allow the user make HTTP requests to the Postman server to perform CRUD operations (Create, Read, Update, and Delete). The mock customer data will allow user to perform CRUD operations in Postman application.\n\n")
+	fmt.Fprintf(w, "The CRUD operations of the project are the following functions:\n\n")
+	fmt.Fprintf(w, "\"getCustomer()\" - displays chosen customer\n")
+	fmt.Fprintf(w, "\"getAllCustomers()\" - displays all customers\n")
+	fmt.Fprintf(w, "\"addCustomer()\" - adds new customer\n")
+	fmt.Fprintf(w, "\"updateCustomer()\" - updates chosen customer\n")
+	fmt.Fprintf(w, "\"removeCustomer()\" - deletes chosen customer")
 }
 
 func getAllCustomers(w http.ResponseWriter, r *http.Request) {
