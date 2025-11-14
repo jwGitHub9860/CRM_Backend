@@ -4,6 +4,13 @@
 
 This project involves building the backend (i.e. server-side portion) of a CRM application. The backend will allow the user make HTTP requests to the Postman server to perform CRUD operations (Create, Read, Update, and Delete). The mock customer data will allow user to perform CRUD operations in Postman application.
 
+The CRUD operations of the project are the following functions:
+- "_getCustomer()_" - displays chosen customer
+- "_getAllCustomers()_" - displays all customers
+- "_addCustomer()_" - adds new customer
+- "_updateCustomer()_" - updates chosen customer
+- "_removeCustomer()_" - deletes chosen customer
+
 **Visual Studio Code** is the application software where the project is made, edited, and tested. The **Postman** tool is used as the frontend of the CRM application when running and testing the project. **GitHub Desktop** is the application software that gives access to the project from _GitHub_ and allows it to be edited in _Visual Studio Code_.
 
 One challenge that has been faced is defining the following import statement in the project:
